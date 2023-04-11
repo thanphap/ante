@@ -1,0 +1,17 @@
+.selling{
+    .section__content{
+        background-color: white;
+        .selling__swiper {
+            &:hover .swiper-button-prev,
+            &:hover .swiper-button-next {
+                opacity: 1;
+                width: var(--swiper-navigation-size);
+                height: var(--swiper-navigation-size);
+                margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+                &::after {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+}
