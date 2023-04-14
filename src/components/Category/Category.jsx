@@ -11,7 +11,7 @@ import './style.scss'
 export default function Category() {
     return (
         <div className='category'>
-            <Container>
+            <Container fluid="lg">
                 <div className='section__simple'>
                     <div className='section__header'>
                         <div className='section__header__title'>DANH MỤC</div>

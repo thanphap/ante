@@ -41,7 +41,7 @@ export default function Header() {
                     </Navbar.Collapse>
                 </Navbar>
             </Container>
-            <Container>
+            <Container fluid="lg">
                 <Navbar className='navbar__end' variant="dark" expand="lg" >
                     <div className='header__search'>
                         <Navbar.Brand href="#" className='d-none d-lg-inline '>ANT ELECTRIC</Navbar.Brand>

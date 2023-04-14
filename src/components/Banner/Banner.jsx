@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.scss'
+import { Swiper, SwiperSlide } from 'swiper/react';
 import {
     Carousel,
     Col,
@@ -7,13 +7,17 @@ import {
     Row
 } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import 'swiper/css';
+import "swiper/css/navigation";
+import { Navigation } from 'swiper';
+import './style.scss'
 export default function Banner() {
     return (
         <div className='banner'>
-            <Container >
+            <Container fluid="lg">
                 <Row>
                     <Col className='banner__left'>
-                        <Carousel variant="dark" slide={false}>
+                        <Carousel variant="light" slide={false}>
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
@@ -53,7 +57,7 @@ export default function Banner() {
                             </Carousel.Item>
                         </Carousel>
                     </Col>
-                    <Col className='banner__right d-flex flex-column' xs={4}>
+                    <Col className='banner__right d-none d-lg-flex flex-column' xs={4}>
                         <Link className='endow' to="#">
                             <img src="https://picsum.photos/600/200?random=16" alt="" />
                         </Link>
@@ -62,47 +66,108 @@ export default function Banner() {
                         </Link>
                     </Col>
                 </Row>
-                <div className='producer d-flex justify-content-around'>
-                    <Link to="#">
-                        <div className='producer_item'>
-                            <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
-                        </div>
-                    </Link>
-                    <Link to="#">
-                        <div className='producer_item'>
-                            <img src="https://hoplongtech.com/uploads/category/Siemens_ag_logo.jpg" alt="" />
-                        </div>
-                    </Link>
-                    <Link to="#">
-                        <div className='producer_item'>
-                            <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
-                        </div>
-                    </Link>
-                    <Link to="#">
-                        <div className='producer_item'>
-                            <img src="https://hoplongtech.com/uploads/category/Siemens_ag_logo.jpg" alt="" />
-                        </div>
-                    </Link>
-                    <Link to="#">
-                        <div className='producer_item'>
-                            <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
-                        </div>
-                    </Link>
-                    <Link to="#">
-                        <div className='producer_item'>
-                            <img src="https://hoplongtech.com/uploads/category/Siemens_ag_logo.jpg" alt="" />
-                        </div>
-                    </Link>
-                    <Link to="#">
-                        <div className='producer_item'>
-                            <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
-                        </div>
-                    </Link>
-                    <Link to="#">
-                        <div className='producer_item'>
-                            <img src="https://hoplongtech.com/uploads/category/Siemens_ag_logo.jpg" alt="" />
-                        </div>
-                    </Link>
+                <div className='producer'>
+                    <Swiper
+                        slidesPerView={3}
+                        slidesPerGroup={3}
+                        spaceBetween={10}
+                        navigation={true}
+                        breakpoints={{
+                            480: {
+                                slidesPerView: 4,
+                                slidesPerGroup: 4,
+                            },
+                            576: {
+                                slidesPerView: 5,
+                                slidesPerGroup: 5,
+                            },
+                            768: {
+                                slidesPerView: 6,
+                                slidesPerGroup: 6,
+                            },
+                            992: {
+                                slidesPerView: 7,
+                                slidesPerGroup: 7,
+                            },
+                            1140: {
+                                slidesPerView: 8,
+                                slidesPerGroup: 8,
+                            },
+                        }}
+                        modules={[Navigation]}
+                        className='producer__swiper'
+                    >
+                        <SwiperSlide>
+                            <Link to="#">
+                                <div className='producer_item'>
+                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
+                                </div>
+                            </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <Link to="#">
+                                <div className='producer_item'>
+                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
+                                </div>
+                            </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <Link to="#">
+                                <div className='producer_item'>
+                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
+                                </div>
+                            </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <Link to="#">
+                                <div className='producer_item'>
+                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
+                                </div>
+                            </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <Link to="#">
+                                <div className='producer_item'>
+                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
+                                </div>
+                            </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <Link to="#">
+                                <div className='producer_item'>
+                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
+                                </div>
+                            </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <Link to="#">
+                                <div className='producer_item'>
+                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
+                                </div>
+                            </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <Link to="#">
+                                <div className='producer_item'>
+                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
+                                </div>
+                            </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <Link to="#">
+                                <div className='producer_item'>
+                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
+                                </div>
+                            </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <Link to="#">
+                                <div className='producer_item'>
+                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
+                                </div>
+                            </Link>
+                        </SwiperSlide>
+                    </Swiper>
                 </div>
             </Container>
         </div>

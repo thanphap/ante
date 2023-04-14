@@ -12,11 +12,11 @@ import './style.scss'
 
 export default function Footer() {
   return (
-    <footer className='mt-5'>
+    <footer>
       <div className='footer'>
-      <Container>
+      <Container fluid="lg">
         <Row>
-          <Col>
+          <Col xs={12} sm={6} md={4} lg={3} xl>
             <div className='footer__logo'>
               <h2 >ANT ELECTRIC</h2>
             </div>
@@ -29,7 +29,7 @@ export default function Footer() {
               </ul>
             </div>
           </Col>
-          <Col>
+          <Col xs={12} sm={6} md={4} lg={3} xl>
             <h3 className='footer__title'>GIỚI THIỆU</h3>
             <div className='footer__content'>
               <ul className='footer__menu'>
@@ -40,7 +40,7 @@ export default function Footer() {
               </ul>
             </div>
           </Col>
-          <Col>
+          <Col xs={12} sm={6} md={4} lg={3} xl>
             <h3 className='footer__title'>CHĂM SÓC KHÁCH HÀNG</h3>
             <div className='footer__content'>
               <ul className='footer__menu'>
@@ -52,7 +52,7 @@ export default function Footer() {
               </ul>
             </div>
           </Col>
-          <Col>
+          <Col xs={12} sm={6}  md={4} lg={3} xl>
             <h3 className='footer__title'>THANH TOÁN</h3>
             <div className='footer__content'>
               <ul className='footer__menu'>
@@ -63,7 +63,7 @@ export default function Footer() {
               </ul>
             </div>
           </Col>
-          <Col>
+          <Col xs={12} sm={6} md={4} lg={3} xl>
             <h3 className='footer__title'>CHÍNH SÁCH/ĐIỀU KHOẢN</h3>
             <div className='footer__content'>
               <ul className='footer__menu'>

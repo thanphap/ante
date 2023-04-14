@@ -1,18 +1,100 @@
-.about{
-    padding: 1.25rem  0;
-    img{
-        margin-left: auto;
-        width: 50%;
-    }
-    .carousel-caption {
-        right: 0px;
-        bottom: 0.5rem;
-        color: #ff8c00;
-    }
-    .carousel-indicators{
-        top: 30%;
-        right: auto;
-        bottom: auto;
-    }
+$XS:     374px;   
+$SM:     480px;  
+$MD:    768px;   
+$LG:   992px;
+$XL:   1200px;      
+
+// media queries
+
+@mixin Responsive($canvas) {
+  @if $canvas == XS {
+   @media only screen and (max-width: $XS) { @content; } 
+  }
+  @else if $canvas == SM {
+   @media only screen and (max-width: $SM) { @content; } 
+  }
+  @else if $canvas == MD {
+   @media only screen and (max-width: $MD) { @content; } 
+  }
+  @else if $canvas == LG {
+   @media only screen and (max-width: $LG) { @content; } 
+  }
+  @else if $canvas == XL {
+    @media only screen and (max-width: $XL) { @content; } 
+   }
 }
+
+.about{
+    padding-top: 1.25rem;
+    .swiper{
+        position: relative;
+        background-color: white;
+        .swiper-pagination{
+            position: absolute;
+            z-index: 2;
+            top: 15%;
+            left: 10%;
+            display: flex;
+            flex-direction: column;
+            color: #7f7f7f;
+            font-size: 1.8rem;
+            transition: all .5s;
+            .swiper-pagination-bullet:hover{
+                color: #09522f;
+            }
+            @include Responsive(XL){
+                top: 4rem;
+                left: 2rem;
+                font-size: 1.8rem;
+            }
+            @include Responsive(SM){
+                top: 1.2rem;
+                left: 1rem;
+                font-size: 1.8rem;
+            }
+            @include Responsive(XS){
+                top: 1rem;
+                left: 1rem;
+                font-size: 1.4rem;
+            }
+        }
+        .swiper-pagination-bullet-active{
+            color: #09522f;
+        }
+        .about__item{
+            width: 100%;
+            padding: 2rem;
+            .about__image{
+                max-width: 400px;
+                max-height: 400px;
+                margin-left: auto;
+                border-radius: 0.125rem;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                }
+            }  
+            .about__caption {
+                margin-left: auto;
+                text-align: left;
+                font-size: 18px;
+                padding-top: 1rem;
+                width: 80%;
+                color: #09522f;
+                @include Responsive(XL){
+                    width: 90%;
+                }
+                @include Responsive(LG){
+                    width: 100%;
+                }
+            }
+            @include Responsive(MD){
+                padding : 0.75rem 0 0 0;
+            }
+        }
+    }
+    
+}
+
+
 
