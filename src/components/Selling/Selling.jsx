@@ -6,11 +6,12 @@ import Nav from 'react-bootstrap/Nav';
 import {
     FaStar
 } from "react-icons/fa";
-import { IoIosArrowDropright } from "react-icons/io";
+import { IoIosArrowDroprightCircle } from "react-icons/io";
 import 'swiper/css';
 import "swiper/css/navigation";
 import { Navigation } from 'swiper';
 import './style.scss'
+import { Link } from 'react-router-dom';
 
 export default function Selling() {
     return (
@@ -25,7 +26,7 @@ export default function Selling() {
                             <Nav.Link eventKey="second">GIÁ TỐT</Nav.Link>
                         </Nav.Item>
                         <div className='viewall'>
-                            <Nav.Link>Xem tất cả <IoIosArrowDropright/></Nav.Link>
+                            <Nav.Link><span>Xem tất cả</span><IoIosArrowDroprightCircle /></Nav.Link>
                         </div>
                     </Nav>
                     <Tab.Content className='section__content'>
@@ -64,14 +65,16 @@ export default function Selling() {
                             >
                                 <SwiperSlide>
                                     <div className='product__item'>
-                                        <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=1" alt='12' />
-                                        </div>
-                                        <div className='product_content'>
-                                            <h4 className='product__name'>RU4S-D24</h4>
-                                            <div className='product__price'>27.290.000₫</div>
-                                            <div className='product__rate'><b>4.6</b><FaStar /></div>
-                                        </div>
+                                        <Link to="#">
+                                            <div className='product__image'>
+                                                <img src="https://picsum.photos/600/600?random=1" alt='12' />
+                                            </div>
+                                            <div className='product_content'>
+                                                <h4 className='product__name'>RU4S-D24</h4>
+                                                <div className='product__price'>27.290.000₫</div>
+                                                <div className='product__rate'><b>4.6</b><FaStar /></div>
+                                            </div>
+                                        </Link>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>

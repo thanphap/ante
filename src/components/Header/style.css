@@ -8,12 +8,17 @@
   font-size: 16px;
 }
 
-header .zalo {
+.header .zalo {
   font-size: 20px;
   background-color: #fff;
   color: #02a905;
   border-radius: 2px;
   padding: 0 2px;
+}
+
+.header .zalo:hover{
+  background-color: #15f8ed;
+  color: white;
 }
 
 .header .navbar__top__content{
@@ -30,6 +35,10 @@ header .zalo {
   position: relative;
   overflow: visible;
   outline: 0;
+}
+
+.header .navbar__top a:hover{
+  color: #15f8ed;
 }
 
 .header .navbar__top .vertical:not(:first-child):after {
@@ -79,7 +88,7 @@ header .zalo {
   right: 3px;
   font-size: 0.8rem;
   border-radius: 10em;
-  background: rgb(2, 169, 5);
+  background: #2ea16a;
   border: solid 1px #eee;
   outline: none;
   transition: all .5s;
@@ -108,8 +117,8 @@ header .zalo {
 .header .button__cart:hover,
 .header .navbar__end .button__cart:active {
   color: white;
-  background-color: #02a905; 
-  border-color: #02a905;
+  background-color: #0f6a3e; 
+  border-color: #0f6a3e;
 }
 
 .header .navbar-toggler{
@@ -131,8 +140,11 @@ header .zalo {
 .header .navbar__end .navbar__menu a {
   color:white;
   padding: 0 20px 6px 0;
-font-weight: 600;
+  font-weight: 600;
+  transition: all .5s;
 }
 
-
+.header .navbar__end .navbar__menu a:hover{
+  color: #15f8ed;
+}
 

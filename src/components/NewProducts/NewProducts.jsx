@@ -6,11 +6,12 @@ import Nav from 'react-bootstrap/Nav';
 import {
     FaStar
 } from "react-icons/fa";
-import { IoIosArrowDropright } from "react-icons/io";
+import { IoIosArrowDroprightCircle } from "react-icons/io";
 import 'swiper/css';
 import "swiper/css/navigation";
 import { Navigation } from 'swiper';
 import './style.scss'
+import { Link } from 'react-router-dom';
 
 export default function NewProducts() {
     return (
@@ -25,7 +26,7 @@ export default function NewProducts() {
                             <Nav.Link eventKey="old">ĐỒ CỦ</Nav.Link>
                         </Nav.Item>
                         <div className='viewall'>
-                            <Nav.Link>Xem tất cả <IoIosArrowDropright/></Nav.Link>
+                            <Nav.Link><span>Xem tất cả</span><IoIosArrowDroprightCircle/></Nav.Link>
                         </div>
                     </Nav>
                     <Tab.Content className='section__content'>
@@ -60,10 +61,11 @@ export default function NewProducts() {
                                     },
                                 }}
                                 modules={[Navigation]}
-                                className='selling__swiper'
+                                className='new__products__swiper'
                             >
                                 <SwiperSlide>
                                     <div className='product__item'>
+                                        <Link to="#">
                                         <div className='product__image'>
                                             <img src="https://picsum.photos/600/600?random=130" alt='12' />
                                         </div>
@@ -72,6 +74,7 @@ export default function NewProducts() {
                                             <div className='product__price'>27.290.000₫</div>
                                             <div className='product__rate'><b>4.6</b><FaStar /></div>
                                         </div>
+                                        </Link>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
@@ -191,7 +194,7 @@ export default function NewProducts() {
                                     },
                                 }}
                                 modules={[Navigation]}
-                                className='selling__swiper'
+                                className='new__products__swiper'
                             >
                                 <SwiperSlide>
                                     <div className='product__item'>
