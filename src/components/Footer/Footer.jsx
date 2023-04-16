@@ -8,7 +8,6 @@ import {
   FaCalendarTimes
 } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
-import './style.scss'
 
 export default function Footer() {
   return (

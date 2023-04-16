@@ -1,0 +1,164 @@
+.header {
+    background: linear-gradient(to right, #0f6a3e 0%, #2ea16a 100%);
+    /* background: linear-gradient(90deg, rgb(2, 169, 5) 0%,  rgba(51, 236, 137, 0.781) 68%, rgb(11, 225, 86) 100%); */
+    /* background: linear-gradient(90deg, rgba(2,82,169,1) 0%, rgba(66,197,241,1) 68%, rgba(11,141,225,1) 100%); */
+    svg {
+        font-size: 16px;
+    }
+    .zalo {
+        font-size: 20px;
+        background-color: #fff;
+        color: #02a905;
+        border-radius: 2px;
+        padding: 0 2px;
+        &:hover {
+            background-color: #15f8ed;
+            color: white;
+        }
+    }
+    .navbar__top__content {
+        height: 2.125rem;
+        padding: 8px 0;
+        // padding-bottom: 8px;
+    }
+    .navbar__top a,
+    .navbar__top span {
+        color: white;
+        font-size: 0.8125rem;
+        font-weight: 300;
+        padding: 0.25rem 0.5rem;
+        position: relative;
+        overflow: visible;
+        outline: 0;
+    }
+    .navbar__top a:hover {
+        color: #15f8ed;
+    }
+    .navbar__top .vertical:not(:first-child):after {
+        content: "";
+        height: 0.9375rem;
+        width: 0;
+        border-left: 1px solid hsla(0, 0%, 100%, 0.22);
+        border-right: 1px solid hsla(0, 0%, 100%, 0.22);
+        position: absolute;
+        left: 0px;
+        top: calc(50% - 7px);
+    }
+
+    .navbar__end {
+        padding: 0;
+        display: block;
+        position: relative;
+        .header__search {
+            display: flex;
+            flex-wrap: inherit;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            .search {
+                width: 80%;
+                position: relative;
+                .header__input__search {
+                    color: #000;
+                    font-size: 1rem;
+                    background-color: #fff;
+                    border: solid 1px #eee;
+                    border-radius: 10em;
+                    transition: all 0.5s;
+                    cursor: pointer;
+                    outline: none;
+                }
+                .button__search {
+                    position: absolute;
+                    padding: 6px 20px;
+                    top: 0.5px;
+                    right: 3px;
+                    font-size: 0.8rem;
+                    border-radius: 10em;
+                    background: #2ea16a;
+                    border: solid 1px #eee;
+                    outline: none;
+                    transition: all 0.5s;
+                    &:hover,
+                    &:active {
+                        background-color: #157347;
+                        border-color: #157347;
+                    }
+                }
+            }
+            .button__cart {
+                margin-left: 5px;
+                top: 2px;
+                right: 3px;
+                font-size: 1rem;
+                border-radius: 10em;
+                border: solid 1px #eee;
+                outline: none;
+                color: rgb(2, 169, 5);
+                background: white;
+                transition: all 0.5s;
+                &:hover,
+                &:active {
+                    color: white;
+                    background-color: #0f6a3e;
+                    border-color: #0f6a3e;
+                }
+            }
+            .navbar-toggler {
+                margin: 0 5px;
+                padding: 0;
+                border: none;
+                outline: none;
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+        .navbar__menu {
+            padding: 8px 0;
+            a {
+                color: white;
+                padding: 0 20px 6px 0;
+                font-weight: 600;
+                transition: all 0.5s;
+                &:hover {
+                    color: #15f8ed;
+                }
+            }
+        }
+    }
+}
+@include responsive("md") {
+    .header {
+        .navbar__main {
+            padding: 0;
+            .navbar__end {
+                .header__search {
+                    padding: 0 5px;
+                }
+                .navbar__menu {
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    bottom: auto;
+                    left: 0;
+                    z-index: 3;
+                    height: 0;
+                    margin: 0;
+                    padding: 0 20px;
+                    overflow: hidden;
+                    background: linear-gradient(to right, rgba(15, 106, 62, 0.85) 0%, rgba(46, 161, 105, 0.85) 100%);
+                    transition: all 1s ease-out;
+                    a {
+                        line-height: 2rem;
+                    }
+                    &.collapse.show{
+                        padding: 20px 20px;
+                        height: 100vh;
+                    }
+                }
+                
+            }
+        }
+    }
+}

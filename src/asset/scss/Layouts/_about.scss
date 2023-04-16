@@ -1,59 +1,65 @@
 .about {
-    padding-top: 1.25rem;
-    .about__content {
-        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
-        .swiper {
-            height: auto;
-            position: relative;
-            background-color: white;
-            .swiper-pagination {
+    // margin-top: 1.25rem;
+    background-color: white;
+    margin-top: 30px;
+    .about_content {
+        padding-top: 1rem;
+        padding-right: 0;
+        .carousel-indicators {
+            top: 0;
+            right: 27px;
+            left: auto;
+            flex-direction: column;
+            margin: 0;
+            button {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: #fff;
+                margin: 6px 0;
+                border: none;
+                opacity: 1;
+                &.active {
+                    background-color: #fb811e;
+                }
+            }
+        }
+        .carousel-item {
+            .about__left {
                 position: absolute;
-                z-index: 2;
-                top: 11%;
-                left: 10%;
+                left: 10em;
+                top: 0;
+                bottom: 0;
                 display: flex;
-                flex-direction: column;
-                color: #7f7f7f;
-                font-size: 1.8rem;
-                line-height: 1.8;
-                transition: all 0.5s;
-                .about__title {
-                    cursor: pointer;
-                    &:hover {
+                align-items: center;
+                z-index: 1;
+                .carousel-caption {
+                    background-color: rgba(245, 245, 245, 0.63);
+                    padding: 2em;
+                    border-radius: 8px;
+                    position: static;
+                    text-align: left;
+                    h3 {
+                        font-size: 50px;
+                        line-height: 60px;
+                        color: #060606;
+                        font-weight: bold;
+                        margin-bottom: 1.5rem;
+                    }
+                    p {
+                        font-size: 20px;
+                        line-height: 27px;
+                        // color: #707070;
                         color: #09522f;
                     }
                 }
             }
-            .swiper-pagination-bullet-active {
-                color: #09522f;
-            }
-            .about__item {
+            .carousel-image {
+                border-top-left-radius: 20px;
+                overflow: hidden;
+                max-height: 600px;
                 width: 100%;
-                padding: 2rem;
-                font-size: 18px;
-                .about__image {
-                    max-width: 400px;
-                    max-height: 400px;
-                    margin-left: auto;
-                    border-radius: 0.125rem;
-                    overflow: hidden;
-                    img {
-                        width: 100%;
-                    }
-                }
-                .about__caption {
-                    max-height: 100px;
-                    margin-left: auto;
-                    text-align: left;
-                    padding: 1rem 0.75rem 0;
-                    width: 80%;
-                    color: #09522f;
-                    overflow: hidden;
-                    transition: all 0.5s;
-                    &:hover {
-                        max-height: 100%;
-                    }
-                }
+                filter: brightness(90%);
             }
         }
     }
@@ -61,16 +67,19 @@
 
 @include responsive("xl") {
     .about {
-        .about__content {
-            .swiper {
-                .swiper-pagination {
-                    top: 4rem;
-                    left: 2rem;
-                    font-size: 1.8rem;
-                }
-                .about__item {
-                    .about__caption {
-                        width: 90%;
+        .about_content {
+            .carousel-item {
+                .about__left {
+                    left: 5em;
+                    .carousel-caption {
+                        h3 {
+                            font-size: 40px;
+                            line-height: 50px;
+                        }
+                        p {
+                            font-size: 19px;
+                            line-height: 26px;
+                        }
                     }
                 }
             }
@@ -80,11 +89,19 @@
 
 @include responsive("lg") {
     .about {
-        .about__content {
-            .swiper {
-                .about__item {
-                    .about__caption {
-                        width: 100%;
+        .about_content {
+            .carousel-item {
+                .about__left {
+                    left: 5em;
+                    .carousel-caption {
+                        h3 {
+                            font-size: 35px;
+                            line-height: 45px;
+                        }
+                        p {
+                            font-size: 17px;
+                            line-height: 26px;
+                        }
                     }
                 }
             }
@@ -94,30 +111,29 @@
 
 @include responsive("md") {
     .about {
-        .about__content {
-            .swiper {
-                .about__item {
-                    padding: 1rem 0;
+        .about_content {
+            padding: 0;
+            .carousel-indicators {
+                top: auto;
+                right: 0;
+                bottom: 27px;
+                left: 0;
+                flex-direction: row;
+                button {
+                    margin: 0 6px;
                 }
             }
-        }
-    }
-}
-
-@include responsive("sx") {
-    .about {
-        .about__content {
-            .swiper {
-                .swiper-pagination {
-                    top: 1.2rem;
-                    left: 1rem;
-                    font-size: 1.8rem;
-                    line-height: 1.5;
-                }
-                .about__item {
-                    .about__caption {
-                        padding: 0 0 1rem 0;
-                        font-size: 16px;
+            .carousel-item {
+                .about__left {
+                    left: 0em;
+                    padding: 2em;
+                    .carousel-caption {
+                        background-color: rgba(255, 255, 255, 0.7);
+                        padding: 3em 2em 2em 4em;
+                        h3 {
+                            font-size: 32px;
+                            line-height: 42px;
+                        }
                     }
                 }
             }
@@ -125,14 +141,22 @@
     }
 }
 
-@include responsive("ss") {
+@include responsive("sm") {
     .about {
-        .about__content {
-            .swiper {
-                .swiper-pagination {
-                    top: 1rem;
-                    left: 1rem;
-                    font-size: 1.4rem;
+        .about_content {
+            .carousel-item {
+                .about__left {
+                    .carousel-caption {
+                        h3 {
+                            font-size: 28px;
+                            line-height: 38px;
+                            margin-bottom: 0.5rem;
+                        }
+                        p {
+                            font-size: 16px;
+                            line-height: 26px;
+                        }
+                    }
                 }
             }
         }

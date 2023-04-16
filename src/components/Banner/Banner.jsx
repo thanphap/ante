@@ -50,7 +50,7 @@ export default function Banner() {
                             </Carousel.Item>
                         </Carousel>
                     </Col>
-                    <Col className='banner__right d-none d-lg-flex flex-column' xs={4}>
+                    <Col className='banner__right d-none d-md-flex flex-column' xs={4}>
                         <Link className='endow' to="#">
                             <img src="https://picsum.photos/600/200?random=16" alt="" />
                         </Link>

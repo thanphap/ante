@@ -16,13 +16,12 @@ import {
     FaUserEdit
 } from "react-icons/fa";
 import { SiZalo } from "react-icons/si";
-import "./style.css";
 
 export default function Header() {
     return (
         <header className='header'>
-            <Container className='py-0'>
-                <Navbar className='navbar__top py-0' expand="lg" variant="dark">
+            <Container fluid="lg" className='py-0'>
+                <Navbar className='navbar__top py-0' expand="md" variant="dark">
                     <Navbar.Collapse className="navbar__top__content justify-content-between">
                         <Nav className='navbar__top__left'>
                             <Nav.Link className='vertical' href="#features"><FaMapMarkerAlt /> Bình Dương</Nav.Link>
@@ -41,8 +40,8 @@ export default function Header() {
                     </Navbar.Collapse>
                 </Navbar>
             </Container>
-            <Container fluid="lg">
-                <Navbar className='navbar__end' variant="dark" expand="lg" >
+            <Container fluid="lg" className='navbar__main'>
+                <Navbar className='navbar__end' variant="dark" expand="md" >
                     <div className='header__search'>
                         <Navbar.Brand href="#" className='d-none d-lg-inline '>ANT ELECTRIC</Navbar.Brand>
                         <div className='my-2 my-lg-0 d-flex justify-content-around w-100'>
@@ -59,11 +58,7 @@ export default function Header() {
                         </div>
                     </div>
                     <Navbar.Collapse id="navbarScroll" className='navbar__menu'>
-                        <Nav
-                            className="me-auto my-2 my-lg-0"
-                            style={{ maxHeight: '200px' }}
-                            navbarScroll
-                        >
+                        <Nav navbarScroll>
                             <Nav.Link href="#action1">TRANG CHỦ</Nav.Link>
                             <Nav.Link href="#action1">SẢN PHẨM</Nav.Link>
                             <Nav.Link href="#action1">DỊCH VỤ</Nav.Link>

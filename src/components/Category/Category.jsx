@@ -6,7 +6,6 @@ import 'swiper/css';
 import 'swiper/css/grid';
 import "swiper/css/navigation";
 import { Grid, Navigation } from 'swiper';
-import './style.scss'
 
 export default function Category() {
     return (

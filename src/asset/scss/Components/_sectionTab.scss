@@ -15,6 +15,10 @@
         color: rgba(0, 0, 0, 0.54);
         font-weight: 500;
         transition: all 0.2s;
+        &:focus-visible{
+            outline: 0;
+            outline-offset: 0;
+        }
         &:hover {
             color: #09522f;
         }
