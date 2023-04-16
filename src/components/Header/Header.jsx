@@ -44,7 +44,7 @@ export default function Header() {
                 <Navbar className='navbar__end' variant="dark" expand="md" >
                     <div className='header__search'>
                         <Navbar.Brand href="#" className='d-none d-lg-inline '>ANT ELECTRIC</Navbar.Brand>
-                        <div className='my-2 my-lg-0 d-flex justify-content-around w-100'>
+                        <div className='my-2 my-md-0 d-flex justify-content-around w-100'>
                             <div className='search'>
                                 <Form.Control className='header__input__search'
                                     type="search"
