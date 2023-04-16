@@ -12,6 +12,14 @@
         position: absolute;
         right: 1.25rem;
         top: 0;
+        span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        svg {
+            margin-left: 5px;
+            font-size: 1.4rem;
+        }
     }
     .nav-link {
         height: 3.75rem;
