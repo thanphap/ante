@@ -51,7 +51,7 @@
                 height: 100%;
             }
             &:hover{
-                transform: translateY(-0.0625rem);
+                transform: translateY(-0.0825rem);
             }
         }
     }
@@ -104,11 +104,11 @@
 @include responsive("xs") {
     .banner {
         .carousel-caption{
-            bottom: 0.5rem;
-            padding-bottom: 0.5rem;
+            bottom: 1rem;
+            padding-bottom: 0.25rem;
         }
         .carousel-indicators{
-                margin-bottom: 0;
+                margin-bottom: 0.75rem;
         }
     }
 }
