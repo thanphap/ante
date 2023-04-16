@@ -84,7 +84,7 @@
 .header .button__search {
   position: absolute;
   padding: 6px 20px;
-  top: 2px;
+  top: 0.5px;
   right: 3px;
   font-size: 0.8rem;
   border-radius: 10em;

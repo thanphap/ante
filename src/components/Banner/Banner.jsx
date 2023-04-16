@@ -10,7 +10,6 @@ import { Link } from 'react-router-dom'
 import 'swiper/css';
 import "swiper/css/navigation";
 import { Navigation } from 'swiper';
-import './style.scss'
 export default function Banner() {
     return (
         <div className='banner'>
@@ -19,9 +18,7 @@ export default function Banner() {
                     <Col className='banner__left'>
                         <Carousel variant="light" slide={false}>
                             <Carousel.Item>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://picsum.photos/1536/631?random=12"
+                                <img src="https://picsum.photos/1536/631?random=12"
                                     alt="First slide"
                                 />
                                 <Carousel.Caption>
@@ -30,9 +27,7 @@ export default function Banner() {
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://picsum.photos/1536/631?random=13"
+                                <img src="https://picsum.photos/1536/631?random=13"
                                     alt="Second slide"
                                 />
 
@@ -42,9 +37,7 @@ export default function Banner() {
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img
-                                    className="d-block w-100"
-                                    src="https://picsum.photos/1536/631?random=14"
+                                <img src="https://picsum.photos/1536/631?random=14"
                                     alt="Third slide"
                                 />
 

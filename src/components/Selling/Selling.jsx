@@ -10,7 +10,6 @@ import { IoIosArrowDroprightCircle } from "react-icons/io";
 import 'swiper/css';
 import "swiper/css/navigation";
 import { Navigation } from 'swiper';
-import './style.scss'
 import { Link } from 'react-router-dom';
 
 export default function Selling() {
@@ -66,99 +65,43 @@ export default function Selling() {
                                 <SwiperSlide>
                                     <div className='product__item'>
                                         <Link to="#">
-                                            <div className='product__image'>
-                                                <img src="https://picsum.photos/600/600?random=1" alt='12' />
-                                            </div>
-                                            <div className='product_content'>
-                                                <h4 className='product__name'>RU4S-D24</h4>
-                                                <div className='product__price'>27.290.000₫</div>
-                                                <div className='product__rate'><b>4.6</b><FaStar /></div>
-                                            </div>
+                                        <div className='product__image'>
+                                            <img src="https://picsum.photos/600/600?random=120" alt='12' />
+                                        </div>
+                                        <div className='product_content'>
+                                            <h4 className='product__name'>RU4S-D24</h4>
+                                            <div className='product__price'>27.290.000₫</div>
+                                            <div className='product__rate'><b>4.6</b><FaStar /></div>
+                                        </div>
                                         </Link>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <div className='product__item'>
+                                        <Link to="#">
                                         <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=2" alt='12' />
+                                            <img src="https://picsum.photos/600/600?random=121" alt='12' />
                                         </div>
                                         <div className='product_content'>
                                             <h4 className='product__name'>RU4S-D24</h4>
                                             <div className='product__price'>27.290.000₫</div>
                                             <div className='product__rate'><b>4.6</b><FaStar /></div>
                                         </div>
+                                        </Link>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <div className='product__item'>
+                                        <Link to="#">
                                         <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=3" alt='12' />
+                                            <img src="https://picsum.photos/600/600?random=122" alt='12' />
                                         </div>
                                         <div className='product_content'>
                                             <h4 className='product__name'>RU4S-D24</h4>
                                             <div className='product__price'>27.290.000₫</div>
                                             <div className='product__rate'><b>4.6</b><FaStar /></div>
                                         </div>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='product__item'>
-                                        <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=4" alt='12' />
-                                        </div>
-                                        <div className='product_content'>
-                                            <h4 className='product__name'>RU4S-D24</h4>
-                                            <div className='product__price'>27.290.000₫</div>
-                                            <div className='product__rate'><b>4.6</b><FaStar /></div>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='product__item'>
-                                        <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=1" alt='12' />
-                                        </div>
-                                        <div className='product_content'>
-                                            <h4 className='product__name'>RU4S-D24</h4>
-                                            <div className='product__price'>27.290.000₫</div>
-                                            <div className='product__rate'><b>4.6</b><FaStar /></div>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='product__item'>
-                                        <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=2" alt='12' />
-                                        </div>
-                                        <div className='product_content'>
-                                            <h4 className='product__name'>RU4S-D24</h4>
-                                            <div className='product__price'>27.290.000₫</div>
-                                            <div className='product__rate'><b>4.6</b><FaStar /></div>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='product__item'>
-                                        <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=3" alt='12' />
-                                        </div>
-                                        <div className='product_content'>
-                                            <h4 className='product__name'>RU4S-D24</h4>
-                                            <div className='product__price'>27.290.000₫</div>
-                                            <div className='product__rate'><b>4.6</b><FaStar /></div>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='product__item'>
-                                        <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=4" alt='12' />
-                                        </div>
-                                        <div className='product_content'>
-                                            <h4 className='product__name'>RU4S-D24</h4>
-                                            <div className='product__price'>27.290.000₫</div>
-                                            <div className='product__rate'><b>4.6</b><FaStar /></div>
-                                        </div>
+                                        </Link>
                                     </div>
                                 </SwiperSlide>
                             </Swiper>
@@ -198,98 +141,44 @@ export default function Selling() {
                             >
                                 <SwiperSlide>
                                     <div className='product__item'>
+                                        <Link to="#">
                                         <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=90" alt='12' />
+                                            <img src="https://picsum.photos/600/600?random=140" alt='12' />
                                         </div>
                                         <div className='product_content'>
                                             <h4 className='product__name'>RU4S-D24</h4>
                                             <div className='product__price'>27.290.000₫</div>
                                             <div className='product__rate'><b>4.6</b><FaStar /></div>
                                         </div>
+                                        </Link>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <div className='product__item'>
+                                        <Link to="#">
                                         <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=2" alt='12' />
+                                            <img src="https://picsum.photos/600/600?random=141" alt='12' />
                                         </div>
                                         <div className='product_content'>
                                             <h4 className='product__name'>RU4S-D24</h4>
                                             <div className='product__price'>27.290.000₫</div>
                                             <div className='product__rate'><b>4.6</b><FaStar /></div>
                                         </div>
+                                        </Link>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <div className='product__item'>
+                                        <Link to="#">
                                         <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=3" alt='12' />
+                                            <img src="https://picsum.photos/600/600?random=142" alt='12' />
                                         </div>
                                         <div className='product_content'>
                                             <h4 className='product__name'>RU4S-D24</h4>
                                             <div className='product__price'>27.290.000₫</div>
                                             <div className='product__rate'><b>4.6</b><FaStar /></div>
                                         </div>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='product__item'>
-                                        <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=4" alt='12' />
-                                        </div>
-                                        <div className='product_content'>
-                                            <h4 className='product__name'>RU4S-D24</h4>
-                                            <div className='product__price'>27.290.000₫</div>
-                                            <div className='product__rate'><b>4.6</b><FaStar /></div>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='product__item'>
-                                        <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=1" alt='12' />
-                                        </div>
-                                        <div className='product_content'>
-                                            <h4 className='product__name'>RU4S-D24</h4>
-                                            <div className='product__price'>27.290.000₫</div>
-                                            <div className='product__rate'><b>4.6</b><FaStar /></div>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='product__item'>
-                                        <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=2" alt='12' />
-                                        </div>
-                                        <div className='product_content'>
-                                            <h4 className='product__name'>RU4S-D24</h4>
-                                            <div className='product__price'>27.290.000₫</div>
-                                            <div className='product__rate'><b>4.6</b><FaStar /></div>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='product__item'>
-                                        <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=3" alt='12' />
-                                        </div>
-                                        <div className='product_content'>
-                                            <h4 className='product__name'>RU4S-D24</h4>
-                                            <div className='product__price'>27.290.000₫</div>
-                                            <div className='product__rate'><b>4.6</b><FaStar /></div>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className='product__item'>
-                                        <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=4" alt='12' />
-                                        </div>
-                                        <div className='product_content'>
-                                            <h4 className='product__name'>RU4S-D24</h4>
-                                            <div className='product__price'>27.290.000₫</div>
-                                            <div className='product__rate'><b>4.6</b><FaStar /></div>
-                                        </div>
+                                        </Link>
                                     </div>
                                 </SwiperSlide>
                             </Swiper>

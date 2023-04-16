@@ -5,7 +5,6 @@ import { Container } from 'react-bootstrap';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
-import './style.scss'
 
 export default function About() {
     const content = [
