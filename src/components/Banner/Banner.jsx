@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
     Carousel,
@@ -11,8 +11,18 @@ import 'swiper/css';
 import "swiper/css/navigation";
 import { Navigation } from 'swiper';
 export default function Banner() {
+    const [marginHeight, setMarginHeight] = useState(0);
+    window.addEventListener('resize', () => {
+        if (window.innerWidth < 768) {
+            setMarginHeight(document.getElementsByClassName('header')[0].offsetHeight);
+        }
+        else {
+            setMarginHeight(0);
+        }
+    });
+
     return (
-        <div className='banner'>
+        <div className='banner' style={{ marginTop: marginHeight }}>
             <Container fluid="lg">
                 <Row>
                     <Col className='banner__left'>

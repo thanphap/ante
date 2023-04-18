@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -18,10 +18,19 @@ import {
 import { SiZalo } from "react-icons/si";
 
 export default function Header() {
+    // window.addEventListener('resize', () => {
+    //     const scrolled = document.documentElement.scrollTop;
+    //     if (window.scrollY > 47) {
+    //         setScrollHeader(true);  
+    //     }
+    //     else {
+    //         setScrollHeader(false);
+    //     }
+    // });
     return (
-        <header className='header'>
+        <header className='header fixed__top'>
             <Container fluid="lg" className='py-0'>
-                <Navbar className='navbar__top py-0' expand="md" variant="dark">
+                <Navbar className='navbar__top py-0' variant="dark" expand="md">
                     <Navbar.Collapse className="navbar__top__content justify-content-between">
                         <Nav className='navbar__top__left'>
                             <Nav.Link className='vertical' href="#features"><FaMapMarkerAlt /> Bình Dương</Nav.Link>
@@ -45,6 +54,7 @@ export default function Header() {
                     <div className='header__search'>
                         <Navbar.Brand href="#" className='d-none d-lg-inline '>ANT ELECTRIC</Navbar.Brand>
                         <div className='my-2 my-md-0 d-flex justify-content-around w-100'>
+                            <Navbar.Toggle aria-controls="navbarScroll" />
                             <div className='search'>
                                 <Form.Control className='header__input__search'
                                     type="search"
@@ -54,7 +64,6 @@ export default function Header() {
                                 <Button className='button__search'><FaSearch /></Button>
                             </div>
                             <Button className='button__cart'><FaShoppingCart /></Button>
-                            <Navbar.Toggle aria-controls="navbarScroll" />
                         </div>
                     </div>
                     <Navbar.Collapse id="navbarScroll" className='navbar__menu'>
