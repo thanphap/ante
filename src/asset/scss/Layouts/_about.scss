@@ -3,20 +3,20 @@
     background-color: white;
     margin-top: 1.25rem;
     .about_content {
-        padding-top: 1.5rem;
-        padding-right: 0;
+        padding: 0;
         .carousel-indicators {
-            top: 0;
-            right: 27px;
-            left: auto;
-            flex-direction: column;
+            bottom: 27px;
+            flex-direction: row;
+            left: 0;
+            right: 0;
+            top: auto;
             margin: 0;
             button {
                 width: 12px;
                 height: 12px;
                 border-radius: 50%;
                 background-color: #fff;
-                margin: 6px 0;
+                margin:  0 6px;
                 border: none;
                 opacity: 1;
                 &.active {
@@ -27,28 +27,29 @@
         .carousel-item {
             .about__left {
                 position: absolute;
-                left: 10em;
+                left: 0;
+                padding: 2em;
                 top: 0;
                 bottom: 0;
                 display: flex;
                 align-items: center;
                 z-index: 1;
                 .carousel-caption {
-                    background-color: rgba(245, 245, 245, 0.63);
-                    padding: 2em;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    padding: 3em 2em 2em 4em;
                     border-radius: 8px;
                     position: static;
                     text-align: left;
                     h3 {
-                        font-size: 50px;
-                        line-height: 60px;
+                        font-size: 28px;
+                        line-height: 38px;
+                        margin-bottom: 0.5rem;
                         color: #060606;
-                        font-weight: bold;
-                        margin-bottom: 1.5rem;
+                        font-weight: 700;
                     }
                     p {
-                        font-size: 20px;
-                        line-height: 27px;
+                        font-size: 16px;
+                        line-height: 26px;
                         // color: #707070;
                         color: #09522f;
                     }
@@ -65,12 +66,64 @@
     }
 }
 
-@include responsive("xl") {
+@include responsive("sm") {
     .about {
         .about_content {
             .carousel-item {
                 .about__left {
+                    .carousel-caption {
+                        h3 {
+                            font-size: 32px;
+                            line-height: 42px;
+                            margin-bottom: 1.5rem;
+                        }
+                        p {
+                            font-size: 17px;
+                            line-height: 26px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive("md") {
+    .about {
+        .about_content {
+            padding-top: 1.5rem;
+            padding-right: 0;
+            .carousel-indicators {
+                top: 0;
+                right: 27px;
+                left: auto;
+                flex-direction: column;
+                button {
+                    margin: 6px 0;
+                }
+            }
+            .carousel-item {
+                .about__left {
                     left: 5em;
+                    .carousel-caption {
+                        background-color: rgba(245, 245, 245, 0.63);
+                        padding: 2em;
+                        h3 {
+                            font-size: 35px;
+                            line-height: 45px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive("lg") {
+    .about {
+        .about_content {
+            .carousel-item {
+                .about__left {
                     .carousel-caption {
                         h3 {
                             font-size: 40px;
@@ -87,74 +140,22 @@
     }
 }
 
-@include responsive("lg") {
+@include responsive("xl") {
     .about {
         .about_content {
             .carousel-item {
                 .about__left {
-                    left: 5em;
+                    left: 10em;
                     .carousel-caption {
                         h3 {
-                            font-size: 35px;
-                            line-height: 45px;
+                            
+                            font-size: 50px;
+                            line-height: 60px;
                         }
                         p {
-                            font-size: 17px;
-                            line-height: 26px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@include responsive("md") {
-    .about {
-        .about_content {
-            padding: 0;
-            .carousel-indicators {
-                top: auto;
-                right: 0;
-                bottom: 27px;
-                left: 0;
-                flex-direction: row;
-                button {
-                    margin: 0 6px;
-                }
-            }
-            .carousel-item {
-                .about__left {
-                    left: 0em;
-                    padding: 2em;
-                    .carousel-caption {
-                        background-color: rgba(255, 255, 255, 0.7);
-                        padding: 3em 2em 2em 4em;
-                        h3 {
-                            font-size: 32px;
-                            line-height: 42px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@include responsive("sm") {
-    .about {
-        .about_content {
-            .carousel-item {
-                .about__left {
-                    .carousel-caption {
-                        h3 {
-                            font-size: 28px;
-                            line-height: 38px;
-                            margin-bottom: 0.5rem;
-                        }
-                        p {
-                            font-size: 16px;
-                            line-height: 26px;
+                            
+                            font-size: 20px;
+                            line-height: 27px;
                         }
                     }
                 }

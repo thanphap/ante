@@ -9,13 +9,11 @@ import {
     FaShoppingCart,
     FaMapMarkerAlt,
     FaEnvelope,
-    FaFacebook,
     FaRegBell,
     FaRegQuestionCircle,
     FaUserCircle,
     FaUserEdit
 } from "react-icons/fa";
-import { SiZalo } from "react-icons/si";
 
 export default function Header() {
     // window.addEventListener('resize', () => {
@@ -35,10 +33,7 @@ export default function Header() {
                         <Nav className='navbar__top__left'>
                             <Nav.Link className='vertical' href="#features"><FaMapMarkerAlt /> Bình Dương</Nav.Link>
                             <Nav.Link className='vertical'><FaEnvelope /> Linh@gmail.com</Nav.Link>
-                            <Navbar.Text className='vertical'>Kết nối</Navbar.Text>
-                            <Nav.Link href="#pricing"><FaFacebook /></Nav.Link>
-                            <Nav.Link href="#pricing"><SiZalo className='zalo' /></Nav.Link>
-
+                            <Nav.Link className='vertical hotline'>Hotline: 0935</Nav.Link>
                         </Nav>
                         <Nav className='navbar__top__right'>
                             <Nav.Link href="#deets"><FaRegBell /> Thông báo</Nav.Link>

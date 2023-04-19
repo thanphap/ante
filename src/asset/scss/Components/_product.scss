@@ -5,8 +5,19 @@
     padding: 15px;
     a {
         text-decoration: none;
-        transition: all 0.5s;
         .product__image {
+            position: relative;
+            &::before {
+                content: '';
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: -75%;
+                display: block;
+                background: linear-gradient(to right,rgba(255,255,255,0) 0,rgba(255,255,255,.3) 100%);
+                transform: skewX(-17deg);
+            }
             min-height: 168px;
             display: flex;
             align-items: center;
@@ -44,8 +55,9 @@
                 }
             }
         }
-        &:hover .product__image img {
-            scale: 1.1;
+        &:hover .product__image::before {
+            left: 125%;
+            transition: 1s all;
         }
     }
 }

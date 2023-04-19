@@ -20,3 +20,13 @@
     background-color: #fff;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
 }
+
+@include responsive("sm") {
+    .section__simple {
+        .section__header {
+            .section__header__title {
+                font-size: 1.2rem; 
+            }
+        }
+    }
+}

@@ -13,8 +13,7 @@
         right: 1.25rem;
         top: 0;
         span {
-            display: inline-block;
-            vertical-align: middle;
+            display: none;
         }
         svg {
             margin-left: 5px;
@@ -49,13 +48,21 @@
             }
         }
     }
-    
 }
 
 @include responsive("ss") {
     .section__tab {
         .viewall span {
-            display: none;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
+
+@include responsive("sm") {
+    .section__tab {
+        .nav-link {
+            font-size: 1.2rem;
         }
     }
 }
