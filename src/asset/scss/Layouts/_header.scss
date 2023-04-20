@@ -1,4 +1,4 @@
-.header {
+.header__top {
     &.fixed__top {
         position: fixed;
         top: 0;
@@ -29,7 +29,7 @@
         }
         a,
         span {
-            transition: all .5s;
+            transition: all 0.5s;
             font-size: 0.8125rem;
             font-weight: 300;
             color: white;
@@ -37,13 +37,12 @@
             outline: 0;
             position: relative;
             overflow: visible;
-            
         }
         a:hover {
             color: #15f8ed;
         }
         .hotline {
-            color:#fb782ef5;
+            color: #fb782ef5;
             font-weight: 700;
             &:hover {
                 color: #ce0e0e;
@@ -64,7 +63,6 @@
                 align-items: center;
                 padding: 0 5px;
                 width: 100%;
-                
                 .search {
                     width: 80%;
                     position: relative;
@@ -137,26 +135,96 @@
                 overflow: hidden;
                 background: linear-gradient(to right, rgba(15, 106, 62, 0.85) 0%, rgba(46, 161, 105, 0.85) 100%);
                 transition: all 1s ease-out;
+                .menu__product__title,
                 a {
                     color: white;
-                    padding: 0 20px 6px 0;
+                    padding: 8px 12px 8px 12px;
                     font-weight: 600;
                     transition: all 0.5s;
                     &:hover {
                         color: #15f8ed;
                     }
-                    line-height: 2rem;
+                    line-height: 1.5;
                 }
                 &.collapse.show {
                     padding: 20px 20px;
                     height: 100vh;
                 }
+                .menu__product {
+                    border: 1px solid transparent;
+                    cursor: pointer;
+                    .menu__product__title {
+                        span {
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin-left: 5px;
+                        }
+                    }
+                    .menu__product__content {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 1;
+                        padding: 1rem 0;
+                        width: 100%;
+                        .menu__item {
+                            box-shadow: -2px 1px 5px transparent;
+                            border: 1px solid transparent;
+                            &:hover {
+                                background: #e9ebeb9c;
+                                .title__list {
+                                    a {
+                                        color: #09522f;
+                                    }
+                                }
+                            }
+                            .one__list {
+                                display: none;
+                                .one__list__item {
+                                    padding-left: 1rem;
+                                    &:hover {
+                                        background: #dde1e1e0;
+                                        a{
+                                            color: #09522f;
+                                        }
+                                    }
+                                }
+                            }
+                            &:hover .one__list {
+                                display: block;
+                            }
+                        }
+                    }
+                    &:hover {
+                        .menu__product__title {
+                            color: #15f8ed;
+                        }
+                        .menu__product__content {
+                            display: block !important;
+                        }
+                    }
+                }
             }
         }
     }
 }
+
+.header__bottom{
+    background: linear-gradient(to right, #0f6a3e 0%, #2ea16a 100%);
+    .navbar__bottom{
+        padding: 0;
+        a{
+            color: white;
+            svg{
+                font-size: 1.3rem;
+            }
+        }
+    }
+    
+}
+
 @include responsive("md") {
-    .header {
+    .header__top {
         &.fixed__top {
             position: static;
         }
@@ -169,12 +237,43 @@
                     padding: 8px;
                 }
                 .navbar__menu {
-                    position: static;
-                    padding: 8px 0;
+                    position: relative;
+                    padding: 0;
                     height: auto;
                     background: transparent;
-                    a {
-                        line-height: 1.5;
+                    overflow: visible;
+                    .menu__product {
+                        z-index: 2;
+                        .menu__product__content {
+                            display: none;
+                            position: absolute;
+                            inset: 0px auto auto 0px;
+                            transform: translate3d(0px, 34px, 0px);
+                            width: 30%;
+                            height: 100vh;
+                            background: rgba(46, 161, 105, 0.85);
+                            border: 1px solid rgba(46, 161, 105, 1);
+                            .menu__item {
+                                padding: 0.7rem 0 0.7rem 1rem;
+                                .one__list {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 100%;
+                                    width: 70%;
+                                    height: 100vh;
+                                    z-index: 2;
+                                    padding: 1rem 0;
+                                    border-radius: 4px;
+                                    background: rgba(46, 161, 105, 0.85);
+                                    box-shadow: 0 1px 5px #e7e7e7;
+                                    border: 1px solid rgba(46, 161, 105, 1);
+                                }
+                            }
+                        }
+                        &:hover {
+                            border: 1px solid rgba(46, 161, 105, 1);
+                            border-bottom: 1px solid transparent;
+                        }
                     }
                 }
             }

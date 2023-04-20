@@ -14,7 +14,7 @@ export default function Banner() {
     const [marginHeight, setMarginHeight] = useState(0);
     window.addEventListener('resize', () => {
         if (window.innerWidth < 768) {
-            setMarginHeight(document.getElementsByClassName('header')[0].offsetHeight);
+            setMarginHeight(document.getElementsByClassName('header__top')[0].offsetHeight - 0.1);
         }
         else {
             setMarginHeight(0);
