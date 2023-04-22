@@ -8,6 +8,7 @@
     .carousel {
         img {
             width: 100%;
+            min-height: 100px;
             max-height: 250px;
         }
     }
@@ -40,6 +41,7 @@
             img {
                 width: 100%;
                 height: 100%;
+                min-height: 95px;
             }
         }
         .endow:last-child {
@@ -63,6 +65,7 @@
             img {
                 width: 100%;
                 height: 100%;
+                min-height: 55px;
             }
             &:hover {
                 transform: translateY(-0.0825rem);
@@ -109,6 +112,7 @@
         .carousel {
             img {
                 width: 100%;
+                min-height: 200px;
                 max-height: 360px;
             }
         }

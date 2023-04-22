@@ -5,7 +5,6 @@
     left: 0;
     z-index: 100;
     background: transparent;
-    transition: all ease-in 0.5s;
     &.nav__fixed {
         background-color: #fff;
         box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.05);
@@ -20,7 +19,6 @@
         color: white;
         outline: 0;
         margin: auto;
-        &:focus,
         &:hover {
             color: #15f8ed;
         }
@@ -32,17 +30,6 @@
     }
     button {
         color: #fff;
-        background-color: transparent;
-        border: none;
-        outline: none;
-        &:hover,
-        &:active,
-        &:first-child:active {
-            background-color: transparent;
-        }
-        &:focus {
-            box-shadow: none;
-        }
     }
     .navbar__top {
         .vertical:not(:first-child):after {
@@ -138,67 +125,66 @@
                 .navbar-toggler {
                     margin: 0 5px;
                     padding: 0;
+                    border: none;
+                    outline: none;
                     &:focus {
                         box-shadow: none;
                     }
                 }
             }
             .navbar__menu {
-                position: relative;
-                padding: 0;
-                height: auto;
-                background: transparent;
-                overflow: visible;
-                .menu__product__title,
-                a {
-                    margin: auto;
-                    padding: 8px 12px;
-                    font-weight: 700;
-                    transition: all 0.5s;
-                    line-height: 1.5;
+                display: block;
+                position: absolute;
+                right: 0;
+                bottom: auto;
+                left: 0;
+                z-index: 3;
+                height: 0;
+                margin: 0;
+                padding: 0 20px;
+                overflow: hidden;
+                background: rgba(255, 255, 255, 0.9);
+                transition: all 1s ease-out;
+                &.collapse.show {
+                    padding: 20px 20px;
+                    height: 100vh;
                 }
                 .menu__product {
                     border: 1px solid transparent;
                     cursor: pointer;
-                    .menu__product__title {
-                        color: #fff;
-                        span {
-                            display: inline-block;
-                            vertical-align: middle;
-                            margin-left: 5px;
+                    a {
+                        margin: auto;
+                        color: rgba(0, 0, 0, 0.45);
+                        padding: 8px 12px 8px 12px;
+                        font-weight: 700;
+                        transition: all 0.5s;
+                        &:hover {
+                            color: #0f6a3e;
                         }
+                        line-height: 1.5;
                     }
                     .menu__product__content {
-                        display: none;
                         position: absolute;
-                        inset: 0px auto auto 0px;
-                        transform: translate3d(0px, 34px, 0px);
-                        width: 30%;
-                        height: 100vh;
-                        z-index: 3;
+                        top: 0;
+                        left: 0;
+                        z-index: 1;
                         padding: 1rem 0;
-                        background: rgba(46, 161, 105, 0.85);
-                        border: 1px solid rgba(46, 161, 105, 1);
-                        a {
-                            color: #fff;
-                        }
+                        width: 100%;
                         .menu__item {
                             box-shadow: -2px 1px 5px transparent;
                             border: 1px solid transparent;
-                            padding: 0.5rem 0 0.5rem 1rem;
+                            &:hover {
+                                background: rgb(255, 255, 255);
+                                box-shadow: -2px 1px 5px #e7e7e7;
+                                border: 1px solid #e7e7e7;
+                                .title__list {
+                                    a {
+                                        color: #09522f;
+                                    }
+                                }
+                            }
                             .one__list {
                                 display: none;
-                                position: absolute;
-                                top: 0;
-                                left: 100%;
-                                width: 70%;
-                                height: 100vh;
-                                z-index: 4;
-                                padding: 1rem 0;
-                                border-radius: 4px;
-                                background: rgba(46, 161, 105, 0.85);
-                                box-shadow: 0 1px 5px #e7e7e7;
-                                border: 1px solid rgba(46, 161, 105, 1);
                                 .one__list__item {
                                     padding-left: 1rem;
                                     &:hover {
@@ -209,29 +195,17 @@
                                     }
                                 }
                             }
-                            &:hover {
-                                background: #e9ebeb9c;
-                                box-shadow: -2px 1px 5px #e7e7e7;
-                                border: 1px solid #e7e7e7;
-                                .title__list {
-                                    a {
-                                        color: #09522f;
-                                    }
-                                }
-                            }
                             &:hover .one__list {
                                 display: block;
                             }
                         }
                     }
                     &:hover {
-                        border: 1px solid rgba(46, 161, 105, 1);
-                        border-bottom: 1px solid transparent;
                         .menu__product__title {
                             color: #15f8ed;
                         }
                         .menu__product__content {
-                            display: block;
+                            display: block !important;
                         }
                     }
                 }
@@ -251,72 +225,10 @@
             svg {
                 font-size: 1.3rem;
             }
-            &:hover,
-            &:active {
+            &:hover, 
+            &:active{
                 outline: none;
                 color: #0f6a3e;
-            }
-        }
-    }
-}
-
-.mobile__menu {
-    --bs-offcanvas-width: 100%;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 1);
-    transition: all 0.5s ease-out;
-    .offcanvas-header{
-        justify-content: normal;
-        color: #0f6a3e;
-        svg{
-            font-size: 1rem;
-            margin-left: 0.5rem;
-            margin-right: 1.5rem;
-        }
-    }
-    .menu__product {
-        padding: 0;
-        a {
-            margin: auto;
-            color: rgba(0, 0, 0, 0.45);
-            padding: 8px 12px 8px 12px;
-            font-weight: 700;
-            transition: all 0.5s;
-            &:hover {
-                color: #0f6a3e;
-            }
-            line-height: 1.5;
-        }
-        .menu__product__content {
-            padding: 0;
-            width: 100%;
-            .menu__item {
-                box-shadow: -2px 1px 5px transparent;
-                border: 1px solid transparent;
-                transition: all 0.5s;
-                &:hover {
-                    background: rgb(255, 255, 255);
-                    box-shadow: -2px 1px 5px #e7e7e7;
-                    border: 1px solid #e7e7e7;
-                    .title__list {
-                        a {
-                            color: #0f6a3e;
-                        }
-                    }
-                }
-                .one__list {
-                    display: none;
-                    .one__list__item {
-                        padding-left: 1rem;
-                        transition: all 0.5s;
-                        &:hover {
-                            background: rgba(221, 225, 225, 0.878);
-                        }
-                    }
-                }
-                &:hover .one__list {
-                    display: block;
-                }
             }
         }
     }
@@ -358,8 +270,70 @@
                             font-size: 24px;
                             margin: auto;
                         }
-                        &:hover {
+                        &:hover{
                             color: #15f8ed;
+                        }
+                    }
+                }
+                .navbar__menu {
+                    position: relative;
+                    padding: 0;
+                    height: auto;
+                    background: transparent;
+                    overflow: visible;
+                    .menu__product {
+                        .menu__product__title,
+                        a {
+                            margin: auto;
+                            color: rgba(0, 0, 0, 0.45);
+                            padding: 8px 12px 8px 12px;
+                            font-weight: 700;
+                            transition: all 0.5s;
+                            line-height: 1.5;
+                        }
+                        .menu__product__title {
+                            color: #fff;
+                            span {
+                                display: inline-block;
+                                vertical-align: middle;
+                                margin-left: 5px;
+                            }
+                        }
+                        .menu__product__content {
+                            display: none;
+                            position: absolute;
+                            inset: 0px auto auto 0px;
+                            transform: translate3d(0px, 34px, 0px);
+                            width: 30%;
+                            height: 100vh;
+                            background: rgba(46, 161, 105, 0.85);
+                            border: 1px solid rgba(46, 161, 105, 1);
+                            a {
+                                color: #fff;
+                            }
+                            .menu__item {
+                                padding: 0.5rem 0 0.5rem 1rem;
+                                .one__list {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 100%;
+                                    width: 70%;
+                                    height: 100vh;
+                                    z-index: 2;
+                                    padding: 1rem 0;
+                                    border-radius: 4px;
+                                    background: rgba(46, 161, 105, 0.85);
+                                    box-shadow: 0 1px 5px #e7e7e7;
+                                    border: 1px solid rgba(46, 161, 105, 1);
+                                }
+                                &:hover {
+                                    background: #e9ebeb9c;
+                                }
+                            }
+                        }
+                        &:hover {
+                            border: 1px solid rgba(46, 161, 105, 1);
+                            border-bottom: 1px solid transparent;
                         }
                     }
                 }

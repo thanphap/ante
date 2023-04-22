@@ -22,7 +22,7 @@ export default function Banner() {
     });
 
     return (
-        <div className='banner' style={{ marginTop: marginHeight }}>
+        <div className='banner'>
             <Container fluid="lg">
                 <Row>
                     <Col className='banner__left'>
@@ -37,7 +37,7 @@ export default function Banner() {
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img src="https://picsum.photos/1536/631?random=13"
+                                <img src="https://picsum.photos/1536/631?random=16"
                                     alt="Second slide"
                                 />
 
@@ -47,7 +47,7 @@ export default function Banner() {
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img src="https://picsum.photos/1536/631?random=14"
+                                <img src="https://picsum.photos/1536/631?random=18"
                                     alt="Third slide"
                                 />
 
