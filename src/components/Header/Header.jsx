@@ -18,7 +18,9 @@ import {
     FaUser,
     FaAddressCard,
     FaAward,
-    FaArrowLeft
+    FaArrowLeft,
+    FaAngleDoubleRight,
+    FaAngleDoubleLeft
 } from "react-icons/fa";
 import { CgShoppingCart } from "react-icons/cg";
 
@@ -26,6 +28,10 @@ export default function Header() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const [showRightBar, setShowRightBar] = useState(false);
+    const toggleShowRightBar = () => setShowRightBar((s) => !s);
+
     const [scrollHeader, setScrollHeader] = useState(false);
     window.addEventListener('scroll', () => {
         if (window.scrollY > 10) {
@@ -156,13 +162,30 @@ export default function Header() {
                     </div>
                 </div>
             </div>
+            <div className='pull__right__bar toggle-right-sidebar' onClick={toggleShowRightBar}>
+                {showRightBar ? <FaAngleDoubleLeft /> : <FaAngleDoubleRight />}
+            </div>
+            <div className={showRightBar ? 'right__sidebar hide_right_bar' : 'right__sidebar'}>
+                <div className='right__sidebar__content'>
+                    <div className='right__sidebar__wrap'> 
+                        <div className='right__sidebar__item'>
+                            <span className='right__sidebar__icon'><FaUserEdit/></span>
+                            <span className='right__sidebar__title'>Back</span>
+                        </div>
+                        <div className='right__sidebar__item'>
+                            <span className='right__sidebar__icon'><FaUserEdit/></span>
+                            <span className='right__sidebar__title'>Back</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <Offcanvas className='mobile__menu'
                 show={show}
                 onHide={handleClose}
                 scroll={true}
             >
                 <Offcanvas.Header>
-                    <FaArrowLeft onClick={handleClose}/>
+                    <FaArrowLeft onClick={handleClose} />
                     <Offcanvas.Title>DANH MỤC</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body className='menu__product'>
@@ -209,7 +232,7 @@ export default function Header() {
                         </div>
                     </div>
                 </Offcanvas.Body>
-            </Offcanvas>
+            </Offcanvas>   
         </header>
     )
 }

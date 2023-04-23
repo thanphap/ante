@@ -5,17 +5,17 @@ export default function About() {
     return (
         <div className='about'>
             <Container fluid className='about_content'>
-                <Carousel slide={false} controls={false}>
+                <Carousel slide={false} controls={true}>
                     <Carousel.Item>
                         <Row>
-                            <Col className='about__left' md={5}>
+                            <Col md={5} className='about__left' >
                                 <Carousel.Caption>
                                     <h3>Giới thiệu chung</h3>
                                     <p>ATDE là nhà cung cấp thiết bị, giải pháp tự động hóa và tích hợp robot công nghiệp hàng đầu tại Việt Nam.<br />
                                         Hiện tại chúng tôi có hơn 200.000 sản phẩm được chỉ định là nhà phân phối của các thương hiệu: Schneider, Autonics, Omron, Hanyoung, Patlite, LS, Delta, Siemens, Idec,... .</p>
                                 </Carousel.Caption>
                             </Col>
-                            <Col md={7} className='ms-auto'>
+                            <Col md={7} className='about__right ms-auto'>
                                 <div className='carousel-image'>
                                     <img src="https://picsum.photos/1536/631?random=18"
                                         alt="First slide"
@@ -27,7 +27,7 @@ export default function About() {
                     </Carousel.Item>
                     <Carousel.Item>
                         <Row>
-                            <Col className='about__left' md={5}>
+                            <Col md={5} className='about__left'>
                                 <Carousel.Caption>
                                     <h3>Năng lực công nghệ</h3>
                                     <p>Dựa trên những đầu tư nghiên cứu phát triển công nghệ bài bản trong nhiều năm qua và sự nhanh nhạy trong việc nắm bắt những xu hướng công nghệ mới.<br/>
@@ -37,7 +37,7 @@ export default function About() {
                                         
                                 </Carousel.Caption>
                             </Col>
-                            <Col md={7} className='ms-auto'>
+                            <Col md={7} className='about__right ms-auto'>
                                 <div className='carousel-image'>
                                     <img src="https://picsum.photos/1536/631?random=19"
                                         alt="First slide"
@@ -49,7 +49,7 @@ export default function About() {
                     </Carousel.Item>
                     <Carousel.Item>
                         <Row>
-                            <Col className='about__left' md={5}>
+                            <Col md={5} className='about__left'>
                                 <Carousel.Caption>
                                     <h3>Tại sao nên chọn ATNE là đối tác</h3>
                                     <p>
@@ -61,7 +61,7 @@ export default function About() {
                                         5. Hỗ trợ kỹ thuật 24/7, lắp đặt, bảo hành miễn phí.</p>
                                 </Carousel.Caption>
                             </Col>
-                            <Col md={7} className='ms-auto'>
+                            <Col md={7} className='about__right ms-auto'>
                                 <div className='carousel-image'>
                                     <img src="https://picsum.photos/1536/631?random=20"
                                         alt="First slide"

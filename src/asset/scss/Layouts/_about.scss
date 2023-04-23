@@ -16,7 +16,7 @@
                 height: 12px;
                 border-radius: 50%;
                 background-color: #fff;
-                margin:  0 6px;
+                margin: 0 6px;
                 border: none;
                 opacity: 1;
                 &.active {
@@ -56,17 +56,26 @@
                     }
                 }
             }
+            .about__right {
+                padding: 0;
+            }
             .carousel-image {
                 border-top-left-radius: 20px;
                 overflow: hidden;
-                max-height: 600px;
-                min-height: 500px;
                 width: 100%;
                 filter: brightness(90%);
-                img{
+                img {
                     height: 100%;
+                    min-height: 500px;
+                    max-height: 600px;
                 }
             }
+        }
+        .carousel-control-next,
+        .carousel-control-prev {
+            top: auto;
+            bottom: 19px;
+            visibility: hidden;
         }
     }
 }
@@ -99,13 +108,8 @@
             padding-top: 1.5rem;
             padding-right: 0;
             .carousel-indicators {
-                top: 0;
-                right: 27px;
+                width: calc((100% / 12) * 7);
                 left: auto;
-                flex-direction: column;
-                button {
-                    margin: 6px 0;
-                }
             }
             .carousel-item {
                 .about__left {
@@ -119,6 +123,14 @@
                         }
                     }
                 }
+            }
+            .carousel-control-next,
+            .carousel-control-prev {
+                z-index: 3;
+                visibility: visible;
+            }
+            .carousel-control-prev {
+                left: calc((100% / 12) * 5);
             }
         }
     }
@@ -153,12 +165,10 @@
                     left: 10em;
                     .carousel-caption {
                         h3 {
-                            
                             font-size: 50px;
                             line-height: 60px;
                         }
                         p {
-                            
                             font-size: 20px;
                             line-height: 27px;
                         }
