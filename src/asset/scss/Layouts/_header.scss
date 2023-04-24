@@ -368,14 +368,14 @@
         border-bottom-left-radius: 9px;
         .right__sidebar__wrap {
             // border-top: 1px solid #41414d;
-            padding-top: 10px;
+            padding-top: 5px;
             .right__sidebar__item {
                 display: block;
                 color: rgba(230, 235, 255, 0.6);
                 text-decoration: none;
                 font-size: 1.2rem;
                 line-height: 24px;
-                margin-bottom: 10px;
+                margin-bottom: 5px;
                 text-align: center;
                 cursor: pointer;
                 .right__sidebar__icon {
@@ -464,7 +464,9 @@
         width: 90px;
         .right__sidebar__content {
             .right__sidebar__wrap {
+                padding-top: 10px;
                 .right__sidebar__item {
+                    margin-bottom: 10px;
                     .right__sidebar__icon{
                         scale: 1;
                     }
