@@ -1,0 +1,39 @@
+.top-to-btn {
+    position: relative;
+    .icon-position {
+        position: fixed;
+        bottom: 60px;
+        right: 15px;
+        z-index: 200;
+    }
+    .icon-style {
+        background-color: white;
+        border: 2px solid #2ea16a;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        color: #0f6a3e;
+        cursor: pointer;
+        animation: movebtn 3s ease-in-out infinite;
+        transition: all 0.3s ease-in-out;
+        svg {
+            display: block;
+            height: 100%;
+            margin: auto;
+            font-size: 1.5rem;
+            transform: rotate(45deg);
+        }
+    }
+}
+
+@keyframes movebtn {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
