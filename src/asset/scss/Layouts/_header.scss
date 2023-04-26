@@ -73,6 +73,16 @@
         .navbar__top__content {
             height: 2.125rem;
             padding: 8px 0;
+            .navbar__top__left{
+                a:first-child{
+                    padding-left: 0;
+                }
+            }
+            .navbar__top__right{
+                a:last-child{
+                    padding-right: 0;
+                }
+            }
         }
     }
 
@@ -174,25 +184,32 @@
                         inset: 0px auto auto 0px;
                         transform: translate3d(0px, 34px, 0px);
                         width: 30%;
-                        height: 100vh;
+                        min-height: calc(100vh - 117px);
                         z-index: 3;
                         padding: 1rem 0;
                         background: rgba(46, 161, 105, 0.85);
                         border: 1px solid rgba(46, 161, 105, 1);
                         a {
+                            width: 100%;
+                            margin: 0;
                             color: #fff;
                         }
                         .menu__item {
                             box-shadow: -2px 1px 5px transparent;
                             border: 1px solid transparent;
                             padding: 0.5rem 0 0.5rem 1rem;
+                            .title__list{
+                                display: flex;
+                                justify-content: space-between;
+                                color: #fff;
+                            }
                             .one__list {
                                 display: none;
                                 position: absolute;
                                 top: 0;
                                 left: 100%;
                                 width: 70%;
-                                height: 100vh;
+                                min-height: calc(100vh - 117px);
                                 z-index: 4;
                                 padding: 1rem 0;
                                 border-radius: 4px;
@@ -214,6 +231,7 @@
                                 box-shadow: -2px 1px 5px #e7e7e7;
                                 border: 1px solid #e7e7e7;
                                 .title__list {
+                                    color: #09522f;
                                     a {
                                         color: #09522f;
                                     }
@@ -423,7 +441,7 @@
             padding-right: calc(var(--bs-gutter-x) * 0.5);
             .navbar__main {
                 .navbar__search {
-                    padding: 8px;
+                    padding: 8px 0px;
                     .search__wrap {
                         width: 80%;
                         position: relative;

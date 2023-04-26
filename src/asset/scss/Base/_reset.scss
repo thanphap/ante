@@ -18,3 +18,18 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+.btn{
+    color: #000;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow:none;
+    &:active,
+    &:hover,
+    &:first-child:active:focus-visible,
+    &:focus-visible {
+        box-shadow:none; 
+        outline: none;
+    }
+}

@@ -97,7 +97,7 @@ export default function Header() {
                 <Container fluid="lg" className='header__main'>
                     <Navbar className='navbar__main' variant="dark" expand="md" >
                         <div className='navbar__search'>
-                            <Navbar.Brand href="#" className='d-none d-md-inline '>ANT ELECTRIC</Navbar.Brand>
+                            <Navbar.Brand href="/" className='d-none d-md-inline '>ANT ELECTRIC</Navbar.Brand>
                             <div className='my-2 my-md-0 d-flex justify-content-around w-100'>
                                 <Button className='button__menu d-md-none' onClick={handleShowMbGroup}>
                                     <FaBars />
@@ -119,23 +119,25 @@ export default function Header() {
                                     <FaBars />
                                     <span>DANH MỤC</span>
                                 </div>
-                                <div className='menu__product__content'>
+                                <Nav className='menu__product__content' navbarScroll>
                                     <div className='menu__item'>
                                         <div className='title__list'>
                                             <Nav.Link href="#action1">BIẾN TẦN</Nav.Link>
+                                            <IoIosArrowForward/>
                                         </div>
-                                        <div className='one__list'>
+                                        <Nav className='one__list' navbarScroll>
                                             <div className='one__list__item'>
                                                 <Nav.Link href="#action1">SIEMENS</Nav.Link>
                                             </div>
                                             <div className='one__list__item'>
                                                 <Nav.Link href="#action1">SCHNEIDER</Nav.Link>
                                             </div>
-                                        </div>
+                                        </Nav>
                                     </div>
                                     <div className='menu__item'>
                                         <div className='title__list'>
                                             <Nav.Link href="#action1">PLC</Nav.Link>
+                                            <IoIosArrowForward/>
                                         </div>
                                         <div className='one__list'>
                                             <div className='one__list__item'>
@@ -146,6 +148,7 @@ export default function Header() {
                                     <div className='menu__item'>
                                         <div className='title__list'>
                                             <Nav.Link href="#action1">RELAY</Nav.Link>
+                                            <IoIosArrowForward/>
                                         </div>
                                         <div className='one__list'>
                                             <div className='one__list__item'>
@@ -156,10 +159,10 @@ export default function Header() {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </Nav>
                             </div>
                             <div className='menu__home d-flex'>
-                                <Nav.Link href="#action1">TRANG CHỦ</Nav.Link>
+                                <Nav.Link href="/home">TRANG CHỦ</Nav.Link>
                                 <Nav.Link href="#action1">SẢN PHẨM</Nav.Link>
                                 <Nav.Link href="#action1">DỊCH VỤ</Nav.Link>
                                 <Nav.Link href="#action2">TÀI LIỆU</Nav.Link>

@@ -1,37 +1,38 @@
 .category {
-        .category__swiper {
-            .category__item {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-decoration: none;
-                color: rgba(0, 0, 0, 0.87);
-                border-right: 1px solid rgba(0, 0, 0, 0.05);
-                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-                text-align: center;
-                background-color: #fff;
-                &:hover{
-                    border-color: rgba(0,0,0,.12);
-                    box-shadow: 0 0 0.8125rem 0 rgba(0,0,0,.05);
-                }
-                .category__image {
-                    margin-top: 10%;
-                    width: 80%;
-                    height: 80%;
-                    border-radius: 50%;
-                    overflow: hidden;
-                    img {
-                        width: 100%;
-                        min-height: 64px;
-                    }
-                }
-                .category__title {
+    margin-top: 1.25rem;
+    .category__swiper {
+        .category__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.87);
+            border-right: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            text-align: center;
+            background-color: #fff;
+            &:hover {
+                border-color: rgba(0, 0, 0, 0.12);
+                box-shadow: 0 0 0.8125rem 0 rgba(0, 0, 0, 0.05);
+            }
+            .category__image {
+                margin-top: 10%;
+                width: 80%;
+                height: 80%;
+                border-radius: 50%;
+                overflow: hidden;
+                img {
                     width: 100%;
-                    height: 2.7rem;
-                    span{
-                        font-size: 0.75rem;
-                    }
+                    min-height: 64px;
+                }
+            }
+            .category__title {
+                width: 100%;
+                height: 2.7rem;
+                span {
+                    font-size: 1rem;
                 }
             }
         }
+    }
 }
