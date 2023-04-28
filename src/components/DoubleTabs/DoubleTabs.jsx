@@ -104,7 +104,7 @@ export default function DoubleTabs() {
                 <div className='double__tabs__content'>
                     <div className="swiper-button-prev-bottom"><IoIosArrowBack /></div>
                     <Swiper
-                        watchSlidesProgress={true}
+                        // watchSlidesProgress={true}
                         slidesPerView={3}
                         slidesPerGroup={3}
                         spaceBetween={10}
@@ -130,6 +130,7 @@ export default function DoubleTabs() {
                                 slidesPerGroup: 8,
                             },
                         }}
+                        autoHeight={true}
                         modules={[Navigation]}
                         navigation={{
                             navigation: true,
@@ -153,18 +154,18 @@ export default function DoubleTabs() {
                                 Bán chạy
                             </Nav.Link>
                         </SwiperSlide>
-                        <SwiperSlide className='level__bottom'>
-                            <Nav.Link eventKey="detail">
-                                Thông tin chi tiết
-                            </Nav.Link>
-                        </SwiperSlide>
                         <SwiperSlide>
                             <Nav.Link className='select__price' eventKey="price">
                                 <span>Giá</span> <IoIosArrowDown/>
                                 <div className='select__price__menu'>
                                     <Nav.Link href="#action1">Giá: Thấp đến Cao</Nav.Link>
-                                    <Nav.Link href="#action1">Giá: Cao đến Thấp</Nav.Link>
+                                    <Nav.Link href="#action2">Giá: Cao đến Thấp</Nav.Link>
                                 </div>
+                            </Nav.Link>
+                        </SwiperSlide>
+                        <SwiperSlide className='level__bottom'>
+                            <Nav.Link eventKey="detail">
+                                Thông tin chi tiết
                             </Nav.Link>
                         </SwiperSlide>
                     </Swiper>

@@ -16,7 +16,7 @@ export default function ProductGroup() {
           <DoubleTabs />
         </div>
         <Row className='product__group__content'>
-          <Col className='filter__panel' xs={2}>
+          <Col className='filter__panel d-none d-lg-block' lg={3} xl={2}>
             <div className='section__simple'>
               <div className='section__header'>
                 <div className='section__header__title'>DANH MỤC</div>
@@ -38,8 +38,8 @@ export default function ProductGroup() {
               </div>
             </div>
           </Col>
-          <Col className='result__content' xs={10}>
-            <Row xs={5}>
+          <Col className='result__content' xs={12} lg={9} xl={10}>
+            <Row xs={2} sm={3} md={4} xl={5}>
               <Col className='result__item'>
                 <div className='product__item'>
                   <Link to="#">
@@ -125,7 +125,7 @@ export default function ProductGroup() {
                 </div>
               </Col>
             </Row>
-            <Row className='pagination__content'>
+            <Row className='pagination__content d-none d-md-block'>
               <Pagination/>
             </Row>
           </Col>
