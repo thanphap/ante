@@ -100,31 +100,33 @@
                 padding: 0 5px;
                 width: 100%;
                 .search__wrap {
+                    display: flex;
+                    align-items: center;
                     position: relative;
                     width: 75%;
                     .input__search {
                         height: 32px;
-                        color: #000;
                         font-size: 1rem;
+                        color: #000;
                         background-color: #fff;
                         border: solid 1px #eee;
                         border-radius: 10em;
                         transition: all 0.5s;
                         cursor: pointer;
-                        outline: none;
-                        box-shadow: none;
+                    }
+                    .button__search__wrapper{
+                        position: absolute;
+                        top: 0px;
+                        right: 2px;
+                        display: flex;
+                        align-items: center;
+                        height: 100%;
                     }
                     .button__search {
-                        position: absolute;
                         padding: 6px 12px;
-                        top: 2px;
-                        right: 2px;
                         font-size: 0.8rem;
                         border-radius: 10em;
                         color: rgba(0, 0, 0, 0.45);
-                        background: transparent;
-                        border: none;
-                        outline: none;
                         transition: all 0.5s;
                         svg {
                             font-size: 16px;
@@ -446,9 +448,7 @@
                         width: 80%;
                         position: relative;
                         .button__search {
-                            padding: 6px 20px;
-                            top: 1px;
-                            right: 2px;
+                            padding: 7px 20px;
                             color: white;
                             background: #2ea16a;
                             &:hover,

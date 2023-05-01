@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <footer>
       <div className='footer'>
-      <Container fluid="lg">
+      <Container fluid="xl">
         <Row>
           <Col xs={12} sm={6} md={4} lg={3} xl>
             <div className='footer__logo'>

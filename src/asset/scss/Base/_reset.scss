@@ -20,6 +20,8 @@ code {
 }
 
 .btn{
+    display: flex;
+    align-items: center;
     color: #000;
     background-color: transparent;
     border: none;
@@ -32,4 +34,21 @@ code {
         box-shadow:none; 
         outline: none;
     }
+}
+
+.form-control{
+    display: flex;
+    align-items: center;
+    color: #000;
+    border: none;
+    outline: none;
+    box-shadow:none;
+    &:active,
+    &:hover,
+    &:first-child:active:focus-visible,
+    &:focus-visible {
+        box-shadow:none; 
+        outline: none;
+    }
+    background-color: transparent;
 }

@@ -1,9 +1,8 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Nav } from 'react-bootstrap'
 import 'swiper/css';
 import "swiper/css/navigation";
-import 'swiper/css/pagination';
 import { Navigation } from 'swiper';
 import { IoIosArrowBack, IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 
@@ -12,34 +11,28 @@ export default function DoubleTabs() {
     // const swiperRef = useRef();
     return (
         <div className='double__tabs'>
-            <Nav className="double__tabs__wrapper top">
+            <Nav className="double__tabs__wrapper top" activeKey="pop9">
                 <div className='double__tabs__title'>BIẾN TẦN</div>
                 <div className='double__tabs__content'>
                     <div className="swiper-button-prev-top"><IoIosArrowBack /></div>
                     <Swiper id='topswiper'
-                        watchSlidesProgress={true}
-                        slidesPerView={3}
+                        slidesPerView={"auto"}
                         slidesPerGroup={3}
-                        spaceBetween={10}
+                        spaceBetween={30}
                         breakpoints={{
                             480: {
-                                slidesPerView: 4,
                                 slidesPerGroup: 4,
                             },
                             576: {
-                                slidesPerView: 5,
                                 slidesPerGroup: 5,
                             },
                             768: {
-                                slidesPerView: 6,
                                 slidesPerGroup: 6,
                             },
                             992: {
-                                slidesPerView: 7,
                                 slidesPerGroup: 7,
                             },
                             1140: {
-                                slidesPerView: 8,
                                 slidesPerGroup: 8,
                             },
                         }}
@@ -100,37 +93,35 @@ export default function DoubleTabs() {
                     <div className="swiper-button-next-top"><IoIosArrowForward /></div>
                 </div>
             </Nav>
-            <Nav className="double__tabs__wrapper bottom">
+            <Nav className="double__tabs__wrapper bottom" activeKey="pop">
                 <div className='double__tabs__content'>
                     <div className="swiper-button-prev-bottom"><IoIosArrowBack /></div>
                     <Swiper
-                        // watchSlidesProgress={true}
-                        slidesPerView={3}
+                        slidesPerView={"auto"}
                         slidesPerGroup={3}
-                        spaceBetween={10}
-                        breakpoints={{
-                            480: {
-                                slidesPerView: 4,
-                                slidesPerGroup: 4,
-                            },
-                            576: {
-                                slidesPerView: 5,
-                                slidesPerGroup: 5,
-                            },
-                            768: {
-                                slidesPerView: 6,
-                                slidesPerGroup: 6,
-                            },
-                            992: {
-                                slidesPerView: 7,
-                                slidesPerGroup: 7,
-                            },
-                            1140: {
-                                slidesPerView: 8,
-                                slidesPerGroup: 8,
-                            },
-                        }}
-                        autoHeight={true}
+                        spaceBetween={30}
+                        // breakpoints={{
+                        //     480: {
+                        //         slidesPerView: 4,
+                        //         slidesPerGroup: 4,
+                        //     },
+                        //     576: {
+                        //         slidesPerView: 5,
+                        //         slidesPerGroup: 5,
+                        //     },
+                        //     768: {
+                        //         slidesPerView: 6,
+                        //         slidesPerGroup: 6,
+                        //     },
+                        //     992: {
+                        //         slidesPerView: 7,
+                        //         slidesPerGroup: 7,
+                        //     },
+                        //     1140: {
+                        //         slidesPerView: 8,
+                        //         slidesPerGroup: 8,
+                        //     },
+                        // }}
                         modules={[Navigation]}
                         navigation={{
                             navigation: true,

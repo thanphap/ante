@@ -91,7 +91,7 @@ export default function Banner() {
                         className='producer__swiper'
                     >
                         <SwiperSlide>
-                            <Link to="#">
+                            <Link to="/producer">
                                 <div className='producer_item'>
                                     <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
                                 </div>

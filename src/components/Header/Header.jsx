@@ -77,7 +77,7 @@ export default function Header() {
     return (
         <header>
             <div className={scrollHeader ? 'header__wrap nav__fixed' : 'header__wrap'}>
-                <Container fluid="lg" className='header__top py-0'>
+                <Container fluid="xl" className='header__top py-0'>
                     <Navbar className='navbar__top py-0' variant="dark" expand="md">
                         <Navbar.Collapse className="navbar__top__content justify-content-between">
                             <Nav className='navbar__top__left'>
@@ -94,7 +94,7 @@ export default function Header() {
                         </Navbar.Collapse>
                     </Navbar>
                 </Container>
-                <Container fluid="lg" className='header__main'>
+                <Container fluid="xl" className='header__main'>
                     <Navbar className='navbar__main' variant="dark" expand="md" >
                         <div className='navbar__search'>
                             <Navbar.Brand href="/" className='d-none d-md-inline '>ANT ELECTRIC</Navbar.Brand>
@@ -108,7 +108,9 @@ export default function Header() {
                                         placeholder="Tìm kiếm theo tên sản phẩm"
                                         aria-label="Search"
                                     />
-                                    <Button className='button__search'><FaSearch /></Button>
+                                    <div className="button__search__wrapper">
+                                        <Button className='button__search'><FaSearch /></Button>
+                                    </div>
                                 </div>
                                 <Button className='button__cart'><CgShoppingCart /></Button>
                             </div>
@@ -122,12 +124,12 @@ export default function Header() {
                                 <Nav className='menu__product__content' navbarScroll>
                                     <div className='menu__item'>
                                         <div className='title__list'>
-                                            <Nav.Link href="#action1">BIẾN TẦN</Nav.Link>
+                                            <Nav.Link href="/productgroup">BIẾN TẦN</Nav.Link>
                                             <IoIosArrowForward/>
                                         </div>
                                         <Nav className='one__list' navbarScroll>
                                             <div className='one__list__item'>
-                                                <Nav.Link href="#action1">SIEMENS</Nav.Link>
+                                                <Nav.Link href="/producer">SIEMENS</Nav.Link>
                                             </div>
                                             <div className='one__list__item'>
                                                 <Nav.Link href="#action1">SCHNEIDER</Nav.Link>
