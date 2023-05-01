@@ -3,14 +3,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Button, Col, Container, Nav, Row } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import Tab from 'react-bootstrap/Tab';
-import { IoMdArrowDropright } from "react-icons/io";
-import {
-    FaStar
-} from "react-icons/fa";
-import { BsCartPlus } from "react-icons/bs";
+import { FaStar } from "react-icons/fa";
+import { BsCartPlus, BsFiletypePdf } from "react-icons/bs";
 import { FiMinus, FiPlus } from "react-icons/fi";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-
+import { IoMdArrowDropright, IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 // Import Swiper styles
 import "swiper/css";
@@ -21,9 +17,10 @@ import "swiper/css/navigation";
 import { Grid, Navigation } from "swiper";
 
 export default function ProductDetail() {
-    const [height, setHeight] = useState('80px')
+    const [height, setHeight] = useState('80px');
     const [showSlide, setShowSlide] = useState(0);
     const getHeight = useRef(null);
+    // const swiperRef = useRef();
     // const showSlide = (swiper) => {
     //     // const swiper = swiperRef.current?.swiper;
     //     // console.log(swiper.slides.img);
@@ -56,12 +53,14 @@ export default function ProductDetail() {
 
     useEffect(() => {
         function handleResize() {
-            console.log(window.outerWidth);
+            const setHeightSwiperWrapper = document.querySelectorAll('.image__swiper>.swiper-wrapper');
             if (window.outerWidth > 479 && window.outerWidth < 768) {
                 setHeight(`${getHeight.current.clientHeight}px`)
+                // console.log(window.outerWidth);
             }
             else {
-                setHeight('auto')
+                setHeight('auto');
+                setHeightSwiperWrapper[0].style.height = 'auto';
             }
         }
         window.addEventListener('load', handleResize);
@@ -103,6 +102,7 @@ export default function ProductDetail() {
                                 </div>
                                 <div className='thumbs__image'>
                                     <Swiper
+                                        // ref={swiperRef}
                                         style={{ height: height }}
                                         onClick={(swiper) => {
                                             setShowSlide(swiper.clickedIndex);
@@ -182,8 +182,24 @@ export default function ProductDetail() {
                                 <div className='product__price'>
                                     <span>27.290.000₫</span>
                                 </div>
-                                <div className='product__quantity__wrapper'>
-                                    <span className='product__quantity__left'>Số lượng</span>
+                                <div className='product__document space__top'>
+                                    <div className='document__item'>
+                                        <div className='left__align'>Loại sản phẩm:</div>
+                                        <div><Nav.Link to='#'>ATV12</Nav.Link></div>
+                                    </div>
+                                    <div className='document__item'>
+                                        <div className='left__align'>Mã sản phẩm:</div>
+                                        <div>ATV12H018F1</div>
+                                    </div>
+                                    <div className='document__item'>
+                                        <div className='left__align'>Tài liệu kỹ thuật:</div>
+                                        <div className='download__document'>
+                                            <Nav.Link to='#'><BsFiletypePdf /></Nav.Link>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='product__quantity__wrapper space__top'>
+                                    <span className='left__align'>Số lượng:</span>
                                     <div className='product__quantity__mid'>
                                         <Button><FiMinus /></Button>
                                         <Form.Control className='input__quantity' type="text" value={1} />
@@ -191,9 +207,17 @@ export default function ProductDetail() {
                                     </div>
                                     <span>1669 sản phẩm có sẵn</span>
                                 </div>
-                                <div className='product__buy__wrapper'>
+                                <div className='product__buy__wrapper space__top'>
                                     <Button className='button__cart'><BsCartPlus /><span>Thêm vào giỏ hàng</span></Button>
                                     <Button className='button__buy'>Mua ngay</Button>
+                                </div>
+                                <div className='promotion__wrapper space__top'>
+                                    <div className='left__align'>Khuyến mại:</div>
+                                    <div className='promotion'>
+                                        <div>
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo nostrum eum molestias nihil vel laborum, deserunt placeat amet a quam fugit dolor tenetur est officia voluptate accusantium dolorum sit beatae!
+                                        </div>
+                                    </div>
                                 </div>
                             </Col>
                         </Row>
@@ -279,17 +303,19 @@ export default function ProductDetail() {
                                     <Form.Control className='message'
                                         as="textarea"
                                         placeholder="Nhập chi tiết yêu cầu của bạn về sản phẩm"
-                                        rows={4} 
+                                        rows={4}
                                     />
                                     <Row className='info'>
                                         <Col xs={12} md={6}>
-                                        <Form.Control type="text" placeholder="Họ và tên" />
+                                            <Form.Control type="text" placeholder="Họ và tên" />
                                         </Col>
                                         <Col xs={12} md={6}>
-                                        <Form.Control type="number" placeholder="Số điện thoại" />
-                                        </Col> 
+                                            <Form.Control type="number" placeholder="Số điện thoại" />
+                                        </Col>
                                     </Row>
-                                    <Button className='send__message'>Gửi</Button>
+                                    <div className='button__wrapper'>
+                                        <Button className='send__message'>Gửi</Button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

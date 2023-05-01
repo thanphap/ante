@@ -31,12 +31,22 @@
         .poduct__detail__sell {
             padding-top: 0.75rem;
             padding-bottom: 0.75rem;
-            color: rgba(0, 0, 0, 0.8);
+            font-size: 1rem;
+            color: #757575;
+            .left__align {
+                flex-basis: 120px;
+                width: 120px;
+            }
+            .space__top{
+                margin-top: 25px;
+                padding: 0 20px;
+            }
             .poduct__header {
                 margin: 0;
                 font-size: 1.5rem;
                 line-height: 1.75rem;
                 font-weight: 500;
+                font-size: rgba(0, 0, 0, 0.8);
                 overflow-wrap: break-word;
             }
             .poduct__review__wrapper {
@@ -76,16 +86,20 @@
                     color: #d0021c;
                 }
             }
+            .product__document{
+                .document__item{
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 10px;
+                }
+                .download__document svg{
+                    font-size: 1.5rem;
+                    color: #2ea16a;
+                }
+            }
             .product__quantity__wrapper {
                 display: flex;
                 align-items: center;
-                margin-top: 30px;
-                padding: 0 20px;
-                font-size: 1rem;
-                color: #757575;
-                .product__quantity__left {
-                    width: 110px;
-                }
                 .product__quantity__mid {
                     display: flex;
                     margin-right: 15px;
@@ -155,6 +169,18 @@
                     background: #2ea16a;
                 }
             }
+            .promotion__wrapper{
+                width: 100%;
+                display: flex;
+                .promotion{
+                    width: calc(100% - 120px);
+                    min-width: 0;
+                    overflow-wrap: break-word;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    line-height: 1.5;
+                }
+            }
         }
     }
     .product__detail__bottom {
@@ -192,7 +218,7 @@
             }
             &.top {
                 flex-wrap: nowrap;
-                padding-left: 1rem;
+                padding-left: 1.2rem;
                 .nav-item {
                     position: relative;
                     height: 3.75rem;
@@ -264,7 +290,7 @@
         .tab__content {
             background-color: #fff;
             .conttent__warpper {
-                padding: 1rem;
+                padding: 1.2rem;
                 min-height: 20vh;
                 overflow: hidden;
             }
@@ -295,17 +321,21 @@
                     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.03);
                 }
             }
-            .send__message {
-                justify-content: center;
-                margin-top: 1.2rem;
-                padding: 0 20px;
-                min-width: 70px;
-                max-width: 250px;
-                height: 35px;
-                font-size: 16px;
-                line-height: 1;
-                color: #fff;
-                background-color: #2ea16a;
+            .button__wrapper{
+                display: flex;
+                justify-content: left;
+                .send__message {
+                    justify-content: center;
+                    margin-top: 1.2rem;
+                    padding: 0 20px;
+                    min-width: 70px;
+                    max-width: 250px;
+                    height: 35px;
+                    font-size: 16px;
+                    line-height: 1;
+                    color: #fff;
+                    background-color: #2ea16a;
+                }
             }
         }
     }
@@ -364,9 +394,6 @@
                     width: 100%;
                     .image__swiper {
                         padding: 10px 0;
-                        .swiper-wrapper {
-                            height: auto !important;
-                        }
                         .swiper-slide {
                             width: 100%;
                         }

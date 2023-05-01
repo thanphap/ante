@@ -62,7 +62,7 @@ export default function Selling() {
                         >
                             <SwiperSlide>
                                 <div className='product__item'>
-                                    <Link to="#">
+                                    <Link to="/productdetail">
                                         <div className='product__image'>
                                             <img src="https://picsum.photos/600/600?random=120" alt='12' />
                                         </div>
