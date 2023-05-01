@@ -177,7 +177,7 @@ export default function Header() {
 
             <div className='header__bottom d-block d-md-none fixed-bottom'>
                 <div className='navbar__bottom'>
-                    <div className='d-flex justify-content-around w-100 py-2'>
+                    <div className='link__wrapper d-flex justify-content-around w-100'>
                         <Nav.Link className='active' href="/">
                             <FaHome />
                             <span>Home</span>

@@ -266,7 +266,11 @@
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     .navbar__bottom {
         padding: 0;
+        .link__wrapper{
+            padding: 0.3rem 0;
+        }
         a {
+            font-size: 0.8125rem;
             display: flex;
             flex-direction:column;
             align-items: center;
