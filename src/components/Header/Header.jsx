@@ -26,8 +26,11 @@ import { SiZalo } from "react-icons/si";
 import { RiFacebookFill } from "react-icons/ri";
 import { CgShoppingCart } from "react-icons/cg";
 import { IoIosArrowForward } from "react-icons/io";
+import { removeAccents } from '../../util/func';
+import { Link, NavLink } from 'react-router-dom';
 
 export default function Header() {
+    const [productGroupId, setProductGroupId] = useState(0);
     const [showMobileMenu, setShowMobileMenu] = useState(false);
     const handleCloseMbGroup = () => setShowMobileMenu(false);
     const handleShowMbGroup = () => setShowMobileMenu(true);
@@ -44,7 +47,7 @@ export default function Header() {
     const data = [
         {
             "productGroupId": 1,
-            "productGroupName": "acs",
+            "productGroupName": "Relay",
             "producerMenu": [
                 {
                     "producerId": 1,
@@ -59,7 +62,54 @@ export default function Header() {
                     "producerImage": null
                 }
             ]
+        },
+        {
+            "productGroupId": 2,
+            "productGroupName": "Cầu dao",
+            "producerMenu": [
+                {
+                    "producerId": 1,
+                    "producerName": "Siemens",
+                    "producerDetail": "...",
+                    "producerImage": "http://localhost:4000/static/producer/1680096305983-76044496-do khoang cach rf.jpg"
+                },
+                {
+                    "producerId": 2,
+                    "producerName": "Orom",
+                    "producerDetail": "abc",
+                    "producerImage": null
+                }
+            ]
         }
+
+    ]
+
+    const dataMainMenu = [
+        {
+            "mainMenuId": 1,
+            "mainMenuName": "Trang chủ",
+            "mainMenuUrl": "/home",
+        },
+        {
+            "mainMenuId": 2,
+            "mainMenuName": "SẢN PHẨM",
+            "mainMenuUrl": "/product-group",
+        },
+        {
+            "mainMenuId": 3,
+            "mainMenuName": "DỊCH VỤ",
+            "mainMenuUrl": "/service",
+        },
+        {
+            "mainMenuId": 4,
+            "mainMenuName": "TÀI LIỆU",
+            "mainMenuUrl": "/document",
+        },
+        {
+            "mainMenuId": 5,
+            "mainMenuName": "GIỚI THIỆU",
+            "mainMenuUrl": "/about",
+        },
     ]
 
     const [showRightBar, setShowRightBar] = useState(false);
@@ -74,6 +124,54 @@ export default function Header() {
             setScrollHeader(false);
         }
     });
+
+    const renderProductMenu = () => {
+        return data.map((el) => {
+            return <div key={`group-menu${el.productGroupId}`} className='menu__item'>
+                <div className='title__list'>
+                    <NavLink to={`/product-group/${removeAccents(el.productGroupName)}`}>{el.productGroupName}</NavLink>
+                    <IoIosArrowForward />
+                </div>
+                <Nav className='one__list' navbarScroll>
+                    {
+                        el.producerMenu.map((el) => {
+                            return <div key={`producer-menu${el.producerId}`} className='one__list__item'>
+                                <NavLink to={`/producer/${removeAccents(el.producerName)}`}>{el.producerName}</NavLink>
+                            </div>
+                        })
+                    }
+                </Nav>
+            </div>
+        });
+    };
+
+    const renderMainMenu = () => {
+        return dataMainMenu.map((el) => {
+            return <NavLink key={`main-menu${el.mainMenuId}`} to={removeAccents(el.mainMenuUrl)}>{el.mainMenuName}</NavLink>
+        })
+    };
+
+    const renderGroupMenuMobile = () => {
+        return data.map((el, index) => {
+            return <div key={`group-menu-mobile${el.productGroupId}`} className='menu__item'
+                onClick={() => {
+                    setProductGroupId(index);
+                    handleShowMbMenuProducer();
+                }}>
+                <NavLink to="#" >{el.productGroupName}</NavLink>
+                <IoIosArrowForward />
+            </div>
+        });
+    };
+
+    const renderProducerMenuMobile = () => {
+        return data[productGroupId].producerMenu.map((el) => {
+            return <div key={`producer-menu-mobile${el.producerId}`} className='menu__item'>
+                <NavLink to={`/producer/${removeAccents(el.producerName)}`} onClick={handleCloseMobileMenu}>{el.producerName}</NavLink>
+            </div>
+        })
+    };
+
     return (
         <header>
             <div className={scrollHeader ? 'header__wrap nav__fixed' : 'header__wrap'}>
@@ -81,15 +179,15 @@ export default function Header() {
                     <Navbar className='navbar__top py-0' variant="dark" expand="md">
                         <Navbar.Collapse className="navbar__top__content justify-content-between">
                             <Nav className='navbar__top__left'>
-                                <Nav.Link className='vertical' href="#features"><FaMapMarkerAlt /> Bình Dương</Nav.Link>
-                                <Nav.Link className='vertical'><FaEnvelope /> Linh@gmail.com</Nav.Link>
-                                <Nav.Link className='vertical hotline'>Hotline: 0935</Nav.Link>
+                                <Link className='vertical' to="#"><FaMapMarkerAlt /> Bình Dương</Link>
+                                <Link className='vertical' to="#"><FaEnvelope /> Linh@gmail.com</Link>
+                                <Link className='vertical hotline' to="#">Hotline: 0935</Link>
                             </Nav>
                             <Nav className='navbar__top__right'>
-                                <Nav.Link href="#deets"><FaRegBell /> Thông báo</Nav.Link>
-                                <Nav.Link href="#deets"><FaRegQuestionCircle /> Hỗ trợ</Nav.Link>
-                                <Nav.Link href="#deets"><FaUserCircle /> Đăng nhập</Nav.Link>
-                                <Nav.Link className='vertical' href="#deets"><FaUserEdit /> Đăng ký</Nav.Link>
+                                <Link to="#"><FaRegBell /> Thông báo</Link>
+                                <Link to="#"><FaRegQuestionCircle /> Hỗ trợ</Link>
+                                <Link to="#"><FaUserCircle /> Đăng nhập</Link>
+                                <Link className='vertical' to="#"><FaUserEdit /> Đăng ký</Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
@@ -97,7 +195,7 @@ export default function Header() {
                 <Container fluid="xl" className='header__main'>
                     <Navbar className='navbar__main' variant="dark" expand="md" >
                         <div className='navbar__search'>
-                            <Navbar.Brand href="/" className='d-none d-md-inline '>ANT ELECTRIC</Navbar.Brand>
+                            <Link to="/" className='navbar__brand d-none d-md-inline '>ANT ELECTRIC</Link>
                             <div className='my-2 my-md-0 d-flex justify-content-around w-100'>
                                 <Button className='button__menu d-md-none' onClick={handleShowMbGroup}>
                                     <FaBars />
@@ -122,53 +220,11 @@ export default function Header() {
                                     <span>DANH MỤC</span>
                                 </div>
                                 <Nav className='menu__product__content' navbarScroll>
-                                    <div className='menu__item'>
-                                        <div className='title__list'>
-                                            <Nav.Link href="/productgroup">BIẾN TẦN</Nav.Link>
-                                            <IoIosArrowForward/>
-                                        </div>
-                                        <Nav className='one__list' navbarScroll>
-                                            <div className='one__list__item'>
-                                                <Nav.Link href="/producer">SIEMENS</Nav.Link>
-                                            </div>
-                                            <div className='one__list__item'>
-                                                <Nav.Link href="#action1">SCHNEIDER</Nav.Link>
-                                            </div>
-                                        </Nav>
-                                    </div>
-                                    <div className='menu__item'>
-                                        <div className='title__list'>
-                                            <Nav.Link href="#action1">PLC</Nav.Link>
-                                            <IoIosArrowForward/>
-                                        </div>
-                                        <div className='one__list'>
-                                            <div className='one__list__item'>
-                                                <Nav.Link href="#action1">SCHNEIDER</Nav.Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='menu__item'>
-                                        <div className='title__list'>
-                                            <Nav.Link href="#action1">RELAY</Nav.Link>
-                                            <IoIosArrowForward/>
-                                        </div>
-                                        <div className='one__list'>
-                                            <div className='one__list__item'>
-                                                <Nav.Link href="#action1">SCHNEIDER</Nav.Link>
-                                            </div>
-                                            <div className='one__list__item'>
-                                                <Nav.Link href="#action1">OMRON</Nav.Link>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {renderProductMenu()}
                                 </Nav>
                             </div>
                             <div className='menu__home d-flex'>
-                                <Nav.Link href="/home">TRANG CHỦ</Nav.Link>
-                                <Nav.Link href="#action1">SẢN PHẨM</Nav.Link>
-                                <Nav.Link href="#action1">DỊCH VỤ</Nav.Link>
-                                <Nav.Link href="#action2">TÀI LIỆU</Nav.Link>
-                                <Nav.Link href="#action2">GIỚI THIỆU</Nav.Link>
+                                {renderMainMenu()}
                             </div>
                         </div>
                     </Navbar>
@@ -177,28 +233,28 @@ export default function Header() {
 
             <div className='header__bottom d-block d-md-none fixed-bottom'>
                 <div className='navbar__bottom'>
-                    <div className='link__wrapper d-flex justify-content-around w-100'>
-                        <Nav.Link className='active' href="/">
+                    <Nav className='link__wrapper d-flex justify-content-around w-100'>
+                        <NavLink to="/">
                             <FaHome />
                             <span>Home</span>
-                        </Nav.Link>
-                        <Nav.Link href="#">
+                        </NavLink>
+                        <NavLink to="/about">
                             <FaAddressCard />
                             <span>Liên hệ</span>
-                        </Nav.Link>
-                        <Nav.Link href="#">
+                        </NavLink>
+                        <NavLink to="/hotsale">
                             <FaAward />
                             <span>Bán chạy</span>
-                        </Nav.Link>
-                        <Nav.Link href="#">
+                        </NavLink>
+                        <NavLink to="/notify">
                             <FaRegBell />
                             <span>Thông báo</span>
-                        </Nav.Link>
-                        <Nav.Link href="#">
+                        </NavLink>
+                        <NavLink to="/profile">
                             <FaUser />
                             <span>Tôi</span>
-                        </Nav.Link>
-                    </div>
+                        </NavLink>
+                    </Nav>
                 </div>
             </div>
 
@@ -225,22 +281,11 @@ export default function Header() {
             >
                 <Offcanvas.Header>
                     <FaArrowLeft onClick={handleCloseMbGroup} />
-                    <Offcanvas.Title>DANH MỤC</Offcanvas.Title>
+                    <Offcanvas.Title>Danh mục</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body className='menu__product'>
                     <div className='menu__product__content'>
-                        <div className='menu__item' onClick={handleShowMbMenuProducer}>
-                            <Nav.Link href="#action1" >BIẾN TẦN</Nav.Link>
-                            <IoIosArrowForward/>
-                        </div>
-                        <div className='menu__item'>
-                                <Nav.Link href="#action1">PLC</Nav.Link>
-                                <IoIosArrowForward/>
-                        </div>
-                        <div className='menu__item'>
-                                <Nav.Link href="#action1">RELAY</Nav.Link>
-                                <IoIosArrowForward/>
-                        </div>
+                        {renderGroupMenuMobile()}
                     </div>
                 </Offcanvas.Body>
             </Offcanvas>
@@ -251,16 +296,13 @@ export default function Header() {
             >
                 <Offcanvas.Header>
                     <FaArrowLeft onClick={handleCloseMbMenuProducer} />
-                    <Offcanvas.Title>BIẾN TẦN</Offcanvas.Title>
+                    <Offcanvas.Title>
+                        {data[productGroupId].productGroupName}
+                    </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body className='menu__product'>
                     <div className='menu__product__content'>
-                        <div className='menu__item'>
-                            <Nav.Link href="#action1" onClick={handleCloseMobileMenu}>SIEMENS</Nav.Link>
-                        </div>
-                        <div className='menu__item'>
-                            <Nav.Link href="#action1" onClick={handleCloseMobileMenu}>SCHNEIDER</Nav.Link>
-                        </div>
+                        {renderProducerMenuMobile()}
                     </div>
                 </Offcanvas.Body>
             </Offcanvas>

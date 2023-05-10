@@ -1,13 +1,104 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/grid';
 import "swiper/css/navigation";
 import { Grid, Navigation } from 'swiper';
+import { removeAccents } from '../../util/func';
 
 export default function Category() {
+    const data = [
+        {
+            "productGroupId": 1,
+            "productGroupName": "acsj",
+            "productGroupImage": "https://picsum.photos/800/800?random=6",
+            "userId": 1
+        },
+        {
+            "productGroupId": 2,
+            "productGroupName": "acfv",
+            "productGroupImage": "https://picsum.photos/800/800?random=7",
+            "userId": 1
+        },
+        {
+            "productGroupId": 3,
+            "productGroupName": "acsb",
+            "productGroupImage": "https://picsum.photos/800/800?random=6",
+            "userId": 1
+        },
+        {
+            "productGroupId": 4,
+            "productGroupName": "acfy",
+            "productGroupImage": "https://picsum.photos/800/800?random=7",
+            "userId": 1
+        },
+        {
+            "productGroupId": 5,
+            "productGroupName": "acsa",
+            "productGroupImage": "https://picsum.photos/800/800?random=6",
+            "userId": 1
+        },
+        {
+            "productGroupId": 6,
+            "productGroupName": "acfr",
+            "productGroupImage": "https://picsum.photos/800/800?random=7",
+            "userId": 1
+        },
+        {
+            "productGroupId": 7,
+            "productGroupName": "acsh",
+            "productGroupImage": "https://picsum.photos/800/800?random=6",
+            "userId": 1
+        },
+        {
+            "productGroupId": 8,
+            "productGroupName": "acfz",
+            "productGroupImage": "https://picsum.photos/800/800?random=7",
+            "userId": 1
+        },
+        {
+            "productGroupId": 9,
+            "productGroupName": "acsn",
+            "productGroupImage": "https://picsum.photos/800/800?random=6",
+            "userId": 1
+        },
+        {
+            "productGroupId": 10,
+            "productGroupName": "acfa",
+            "productGroupImage": "https://picsum.photos/800/800?random=7",
+            "userId": 1
+        },
+        {
+            "productGroupId": 11,
+            "productGroupName": "acsf",
+            "productGroupImage": "https://picsum.photos/800/800?random=6",
+            "userId": 1
+        },
+        {
+            "productGroupId": 12,
+            "productGroupName": "acfs",
+            "productGroupImage": "https://picsum.photos/800/800?random=7",
+            "userId": 1
+        }
+    ];
+
+    const renderCategory = (data) => {
+        return data.map((el) => {
+            return <SwiperSlide key={`category${el.productGroupName}`}>
+                <Link to={`/product-group/${removeAccents(el.productGroupName)}`} className="category__item">
+                    <div className="category__image">
+                        <img src={el.productGroupImage} alt={el.productGroupName} loading="lazy" />
+                        <div className="swiper-lazy-preloader"></div>
+                    </div>
+                    <div className="category__title">
+                        <span>{el.productGroupName}</span>
+                    </div>
+                </Link>
+            </SwiperSlide>
+        })
+    }
+
     return (
         <div className='category'>
             <div className='section__simple'>
@@ -69,246 +160,7 @@ export default function Category() {
                         modules={[Grid, Navigation]}
                         className='category__swiper'
                     >
-                        <SwiperSlide>
-                            <Link to="/productgroup" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=1" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>Biến tần</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=2" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=3" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=4" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=5" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=6" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=1" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=2" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=3" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=4" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=5" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=6" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=1" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=2" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=3" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=4" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=5" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=6" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=1" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=2" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=3" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=4" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=5" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#" className="category__item">
-                                <div className="category__image">
-                                    <img src="https://picsum.photos/800/800?random=6" alt="12" />
-                                </div>
-                                <div className="category__title">
-                                    <span>siemmens</span>
-                                </div>
-                            </Link>
-                        </SwiperSlide>
+                        {renderCategory(data)}
                     </Swiper>
                 </div>
             </div>

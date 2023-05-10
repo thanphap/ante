@@ -23,19 +23,19 @@ export default createBrowserRouter([
                 element: <Home/>,
             },
             {
-                path:"/productgroup",
+                path:"/product-group/:productGroupName",
                 element: <ProductGroup/>,
             },
             {
-                path:"/producer",
+                path:"/producer/:producerName",
                 element: <Producer/>,
             },
             {
-                path:"/producttype",
+                path:"/product-type/:productTypeName",
                 element: <ProductType/>,
             },
             {
-                path:"/productdetail",
+                path:"/product-detail/:productDetailName",
                 element: <ProductDetail/>,
             },
         ],

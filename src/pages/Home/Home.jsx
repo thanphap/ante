@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className='home'>
       <Banner />
-      <Container fluid="lg">
+      <Container fluid="xl">
         <Category />
         <Selling />
         <NewProducts />

@@ -1,17 +1,120 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Tab from 'react-bootstrap/Tab';
 import Nav from 'react-bootstrap/Nav';
-import {
-    FaStar
-} from "react-icons/fa";
+import {FaStar} from "react-icons/fa";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import 'swiper/css';
 import "swiper/css/navigation";
 import { Navigation } from 'swiper';
-import { Link } from 'react-router-dom';
+import { removeAccents } from '../../util/func';
 
 export default function NewProducts() {
+    const dataNew = [
+        {
+            "productId": 1,
+            "productName": "PLC",
+            "amount": 1,
+            "price": 20,
+            "productImage": "http://localhost:4000/static/product/1680088476348-489767149-chan usb.png",
+            "description": "234dfds",
+            "location": "d",
+            "assess": 20,
+            "voted": 4,
+            "userId": 1,
+            "productTypeId": 1
+        },
+        {
+            "productId": 3,
+            "productName": "Connect",
+            "amount": 1,
+            "price": 20,
+            "productImage": "https://picsum.photos/600/600?random=130",
+            "description": "234dfds",
+            "location": "d",
+            "assess": 20,
+            "voted": 4,
+            "userId": 1,
+            "productTypeId": 1
+        },
+        {
+            "productId": 4,
+            "productName": "VDK",
+            "amount": 1,
+            "price": 20,
+            "productImage": "",
+            "description": "234dfds",
+            "location": "d",
+            "assess": 20,
+            "voted": 4,
+            "userId": 1,
+            "productTypeId": 1
+        }
+    ];
+
+    const dataOld = [
+        {
+            "productId": 1,
+            "productName": "PLC",
+            "amount": 1,
+            "price": 20,
+            "productImage": "http://localhost:4000/static/product/1680088476348-489767149-chan usb.png",
+            "description": "234dfds",
+            "location": "d",
+            "assess": 20,
+            "voted": 4,
+            "userId": 1,
+            "productTypeId": 1
+        },
+        {
+            "productId": 3,
+            "productName": "Connect",
+            "amount": 1,
+            "price": 20,
+            "productImage": "",
+            "description": "234dfds",
+            "location": "d",
+            "assess": 20,
+            "voted": 4,
+            "userId": 1,
+            "productTypeId": 1
+        },
+        {
+            "productId": 4,
+            "productName": "VDK",
+            "amount": 1,
+            "price": 20,
+            "productImage": "",
+            "description": "234dfds",
+            "location": "d",
+            "assess": 20,
+            "voted": 4,
+            "userId": 1,
+            "productTypeId": 1
+        }
+    ];
+
+    const renderProduct = (data) => {
+        return data?.map((el) => {
+            return <SwiperSlide key={`product${el.productName}`}>
+                <div className='product__item'>
+                    <Link to={`/product-detail/${removeAccents(el.productName)}`}>
+                        <div className='product__image'>
+                            <img src={el.productImage} alt={el.productName} loading="lazy" />
+                            <div className="swiper-lazy-preloader"></div>
+                        </div>
+                        <div className='product__content'>
+                            <h4 className='product__name'>{el.productName}</h4>
+                            <div className='product__price'>{el.price}</div>
+                            <div className='product__rate'><b>{el.voted}</b><FaStar /></div>
+                        </div>
+                    </Link>
+                </div>
+            </SwiperSlide>
+        });
+    };
+
     return (
         <div className='new__products'>
             <Tab.Container defaultActiveKey="new">
@@ -60,48 +163,7 @@ export default function NewProducts() {
                             modules={[Navigation]}
                             className='new__products__swiper'
                         >
-                            <SwiperSlide>
-                                <div className='product__item'>
-                                    <Link to="#">
-                                        <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=130" alt='12' />
-                                        </div>
-                                        <div className='product_content'>
-                                            <h4 className='product__name'>RU4S-D24</h4>
-                                            <div className='product__price'>27.290.000₫</div>
-                                            <div className='product__rate'><b>4.6</b><FaStar /></div>
-                                        </div>
-                                    </Link>
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className='product__item'>
-                                    <Link to="#">
-                                        <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=131" alt='12' />
-                                        </div>
-                                        <div className='product_content'>
-                                            <h4 className='product__name'>RU4S-D24</h4>
-                                            <div className='product__price'>27.290.000₫</div>
-                                            <div className='product__rate'><b>4.6</b><FaStar /></div>
-                                        </div>
-                                    </Link>
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className='product__item'>
-                                    <Link to="#">
-                                        <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=132" alt='12' />
-                                        </div>
-                                        <div className='product_content'>
-                                            <h4 className='product__name'>RU4S-D24</h4>
-                                            <div className='product__price'>27.290.000₫</div>
-                                            <div className='product__rate'><b>4.6</b><FaStar /></div>
-                                        </div>
-                                    </Link>
-                                </div>
-                            </SwiperSlide>
+                            {renderProduct(dataNew)}
                         </Swiper>
                     </Tab.Pane>
                     <Tab.Pane eventKey="old">
@@ -137,48 +199,7 @@ export default function NewProducts() {
                             modules={[Navigation]}
                             className='new__products__swiper'
                         >
-                            <SwiperSlide>
-                                <div className='product__item'>
-                                    <Link to="#">
-                                        <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=134" alt='12' />
-                                        </div>
-                                        <div className='product_content'>
-                                            <h4 className='product__name'>RU4S-D24</h4>
-                                            <div className='product__price'>27.290.000₫</div>
-                                            <div className='product__rate'><b>4.6</b><FaStar /></div>
-                                        </div>
-                                    </Link>
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className='product__item'>
-                                    <Link to="#">
-                                        <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=135" alt='12' />
-                                        </div>
-                                        <div className='product_content'>
-                                            <h4 className='product__name'>RU4S-D24</h4>
-                                            <div className='product__price'>27.290.000₫</div>
-                                            <div className='product__rate'><b>4.6</b><FaStar /></div>
-                                        </div>
-                                    </Link>
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className='product__item'>
-                                    <Link to="#">
-                                        <div className='product__image'>
-                                            <img src="https://picsum.photos/600/600?random=136" alt='12' />
-                                        </div>
-                                        <div className='product_content'>
-                                            <h4 className='product__name'>RU4S-D24</h4>
-                                            <div className='product__price'>27.290.000₫</div>
-                                            <div className='product__rate'><b>4.6</b><FaStar /></div>
-                                        </div>
-                                    </Link>
-                                </div>
-                            </SwiperSlide>
+                            {renderProduct(dataOld)}
                         </Swiper>
                     </Tab.Pane>
                 </Tab.Content>

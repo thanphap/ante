@@ -1,62 +1,113 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
     Carousel,
     Col,
     Container,
     Row
-} from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+} from 'react-bootstrap';
 import 'swiper/css';
 import "swiper/css/navigation";
 import { Navigation } from 'swiper';
+import { removeAccents } from '../../util/func';
+
 export default function Banner() {
+    const dataBanner = [
+        {
+            "bannerId": 1,
+            "bannerImage": "https://picsum.photos/1536/631?random=12",
+            "bannerTitle": "First slide label",
+            "bannerContent": "Nulla vitae elit libero, a pharetra augue mollis interdum."
+        },
+        {
+            "bannerId": 2,
+            "bannerImage": "https://picsum.photos/1536/631?random=13",
+            "bannerTitle": "Second slide label",
+            "bannerContent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+            "bannerId": 3,
+            "bannerImage": "https://picsum.photos/1536/631?random=14",
+            "bannerTitle": "Third slide label",
+            "bannerContent": "Praesent commodo cursus magna, vel scelerisque nisl consectetur."
+        },
+
+    ];
+
+    const dataAdvertise = [
+        {
+            "cardId": 1,
+            "cardImage": "https://picsum.photos/1536/631?random=15",
+            "cardUrl": "https://picsum.photos/",
+            "cardAlt": "First slide label",
+        },
+        {
+            "cardId": 2,
+            "cardImage": "https://picsum.photos/1536/631?random=16",
+            "cardUrl": "https://picsum.photos/",
+            "cardAlt": "First slide label",
+        },
+    ];
+
+    const dataProducer = [
+        {
+            "producerId": 2,
+            "producerName": "Snider",
+            "producerImage": "https://hoplongtech.com/uploads/category/Fecon.jpg",
+        },
+        {
+            "producerId": 3,
+            "producerName": "Onrom",
+            "producerImage": "http://localhost:4000/static/productgroup/1680097267217-100718436-do khoang cach rf.jpg",
+        },
+    ];
+
+    const renderBanner = () => {
+        return dataBanner.map((el) => {
+            return <Carousel.Item key={`banner${el.bannerId}`}>
+                <img src={el.bannerImage}
+                    alt={el.bannerTitle}
+                />
+                <Carousel.Caption>
+                    <h3>{el.bannerTitle}</h3>
+                    <p>{el.bannerContent}</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+        });
+    };
+
+    const renderAdvertise = () => {
+        return dataAdvertise.map((el) => {
+            return <Link key={`card${el.cardId}`} className='endow' to={el.cardUrl}>
+                <img src={el.cardImage} alt={el.cardAlt} />
+            </Link>
+        })
+    };
+
+    const renderProducer = () => {
+        return dataProducer.map((el) => {
+            return <SwiperSlide key={`producer-list${el.producerId}`}>
+                <Link to={`/producer/${removeAccents(el.producerName)}`}>
+                    <div className='producer__item'>
+                        <img src={el.producerImage} alt={el.producerName} />
+                    </div>
+                </Link>
+            </SwiperSlide>
+        })
+    }
+
     return (
         <div className='banner'>
             <Container fluid="lg">
                 <Row>
                     <Col className='banner__left'>
                         <Carousel variant="light" slide={false}>
-                            <Carousel.Item>
-                                <img src="https://picsum.photos/1536/631?random=12"
-                                    alt="First slide"
-                                />
-                                <Carousel.Caption>
-                                    <h3>First slide label</h3>
-                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img src="https://picsum.photos/1536/631?random=16"
-                                    alt="Second slide"
-                                />
-
-                                <Carousel.Caption>
-                                    <h3>Second slide label</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                            <Carousel.Item>
-                                <img src="https://picsum.photos/1536/631?random=18"
-                                    alt="Third slide"
-                                />
-
-                                <Carousel.Caption>
-                                    <h3>Third slide label</h3>
-                                    <p>
-                                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                                    </p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
+                            {renderBanner()}
                         </Carousel>
                     </Col>
                     <Col className='banner__right d-none d-md-flex flex-column' xs={4}>
-                        <Link className='endow' to="#">
-                            <img src="https://picsum.photos/600/200?random=16" alt="" />
-                        </Link>
-                        <Link className='endow' to="#">
-                            <img src="https://picsum.photos/600/200?random=17" alt="" />
-                        </Link>
+                        {renderAdvertise()}
                     </Col>
                 </Row>
                 <div className='producer'>
@@ -90,76 +141,7 @@ export default function Banner() {
                         modules={[Navigation]}
                         className='producer__swiper'
                     >
-                        <SwiperSlide>
-                            <Link to="/producer">
-                                <div className='producer_item'>
-                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#">
-                                <div className='producer_item'>
-                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#">
-                                <div className='producer_item'>
-                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#">
-                                <div className='producer_item'>
-                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#">
-                                <div className='producer_item'>
-                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#">
-                                <div className='producer_item'>
-                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#">
-                                <div className='producer_item'>
-                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#">
-                                <div className='producer_item'>
-                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#">
-                                <div className='producer_item'>
-                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
-                                </div>
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Link to="#">
-                                <div className='producer_item'>
-                                    <img src="https://hoplongtech.com/uploads/category/Fecon.jpg" alt="" />
-                                </div>
-                            </Link>
-                        </SwiperSlide>
+                        {renderProducer()}
                     </Swiper>
                 </div>
             </Container>

@@ -20,7 +20,7 @@
                 padding: 10px 0;
                 .swiper-slide {
                     width: 100%;
-                    height: auto;
+                    height: 100%;
                     border: 3px solid transparent;
                 }
                 .show__slide {
@@ -104,10 +104,11 @@
                     display: flex;
                     margin-right: 15px;
                     button {
+                        padding: 0;
                         justify-content: center;
                         width: 32px;
                         height: 32px;
-                        font-size: 2rem;
+                        font-size: 1rem;
                         font-weight: 300;
                         background: transparent;
                         color: rgba(0, 0, 0, 0.8);
@@ -270,15 +271,16 @@
                         position: absolute;
                         top: 0;
                         z-index: 2;
+                        width: 1.5rem;
                         height: 100%;
                         font-size: 1.5rem;
                     }
                     .swiper-button-next-tab {
-                        right: -20px;
+                        right: -1.5rem;
                         left: auto;
                     }
                     .swiper-button-prev-tab {
-                        left: -20px;
+                        left: -1.5rem;
                         right: auto;
                     }
                     .swiper-button-disabled {
@@ -293,6 +295,9 @@
                 padding: 1.2rem;
                 min-height: 20vh;
                 overflow: hidden;
+                .part__content{
+                    min-height: 10vh;
+                }
             }
         }
     }
